@@ -1,0 +1,6 @@
+.home{
+   width: 100vw;
+   height:85vh ;
+    background-image: url('../.././assets/images/fondo_home.jpg') ;
+    background-size: cover;
+}

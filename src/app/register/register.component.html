@@ -1,37 +1,44 @@
+<div class="formulario container-fluid col-3">
+  <h2 class="text-primary">Registro</h2>
 <form novalidate
     [formGroup]="formRegistro"
     (ngSubmit)="manejarFomulario()">
 
     <div class="form-group">
       <input class="form-control" type="text" name="nombre" formControlName="nombre" placeholder="nombre">
-      <small *ngIf="formRegistro.controls['nombre'].errors?.required && formRegistro.controls['nombre'].dirty" class="form-text text-danger">Este campo es requerido</small>
+      <small *ngIf="formRegistro.controls['nombre'].errors?.required && formRegistro.controls['nombre'].dirty" class="form-text text-danger">Este campo es obligatorio</small>
     </div>
 
     <div class="form-group">
       <input class="form-control" type="password" name="pwd" formControlName="pwd" placeholder="password">
-      <small *ngIf="formRegistro.controls['pwd'].errors?.required && formRegistro.controls['pwd'].dirty" class="form-text text-danger">Este campo es requerido</small>          
+      <small *ngIf="formRegistro.controls['pwd'].errors?.required && formRegistro.controls['pwd'].dirty" class="form-text text-danger">Este campo es obligatorio</small>          
     </div>
   
     <div class="form-group">
       <input class="form-control" type="password" name="pwdRepeat" formControlName="pwdRepeat" placeholder="Repite tu password">
-      <small *ngIf="formRegistro.controls['pwdRepeat'].errors?.required && formRegistro.controls['pwdRepeat'].dirty" class="form-text text-danger">Este campo es requerido</small>          
+      <small *ngIf="formRegistro.controls['pwdRepeat'].errors?.required && formRegistro.controls['pwdRepeat'].dirty" class="form-text text-danger">Este campo es obligatorio</small>          
+      <small *ngIf="formRegistro.errors?.repeatClave && formRegistro.controls['pwdRepeat'].dirty" class="form-text text-danger">Las contraseñas NO coinciden </small>      
     </div>
 
     <div class="form-group">
       <input class="form-control" type="text" name="mail" formControlName="mail" placeholder="Indica tu mail">
-      <small *ngIf="formRegistro.controls['mail'].errors?.required && formRegistro.controls['mail'].dirty" class="form-text text-danger">Este campo es requerido</small>          
-      <p *ngIf="formRegistro.controls['mail'].errors?.pattern && formRegistro.controls['mail'].dirty">No es correcto </p>
+      <small *ngIf="formRegistro.controls['mail'].errors?.required && formRegistro.controls['mail'].dirty" class="form-text text-danger">Este campo es obligatorio</small>          
+      <small *ngIf="formRegistro.controls['mail'].errors?.pattern && formRegistro.controls['mail'].dirty" class="form-text text-danger">Este email NO es correcto </small>
     </div>
 
     <div>
-      <input type="text" name="fechaNacimiento" formControlName="fechaNacimiento" placeholder="fecha de Nacieminto">    
-      <p *ngIf="formRegistro.controls['fechaNacimiento'].errors?.fechanacimiento && formRegistro.controls['fechaNacimiento'].dirty">
+      <input class="form-control" type="text" name="fechaNacimiento" formControlName="fechaNacimiento" placeholder="fecha de Nacieminto">    
+      <small *ngIf="formRegistro.controls['fechaNacimiento'].errors?.fechanacimiento && formRegistro.controls['fechaNacimiento'].dirty" class="form-text text-danger">
         error fecha nacimiento {{ formRegistro.controls['fechaNacimiento'].errors?.fechanacimiento }}
-      </p>
-     </div>
+      </small>
+    </div>
 
 
-<button type="submit" 
+<button type="submit" class="btn btn-success mt-3"
 [disabled]="formRegistro.invalid" 
 [ngClass]="{ 'button-disabled ': formRegistro.invalid}">Regístrarme</button>
+
+
 </form>
+
+</div>

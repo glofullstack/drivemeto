@@ -1,0 +1,19 @@
+/* input.ng-valid.ng-dirty{
+    border: 2px seagreen solid;    
+} */
+
+.formulario{
+    min-width: 250px;
+}
+
+input.ng-invalid.ng-dirty{
+    border: 2px solid red;
+
+}
+
+.button-disabled{
+    background-color: red;
+
+    color:white;
+    font-weight: bold;
+}

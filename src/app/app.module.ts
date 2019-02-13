@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 import { RegisterComponent } from './register/register.component';
 import { CabeceraComponent } from './cabecera/cabecera.component';
 import { PieComponent } from './pie/pie.component';
+import { HomeComponent } from './home/home.component';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { PieComponent } from './pie/pie.component';
     AppComponent,
     RegisterComponent,
     CabeceraComponent,
-    PieComponent
+    PieComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
