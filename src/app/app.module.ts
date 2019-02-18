@@ -10,6 +10,11 @@ import { CabeceraComponent } from './cabecera/cabecera.component';
 import { PieComponent } from './pie/pie.component';
 import { HomeComponent } from './home/home.component';
 
+import { BuscarTrayectoComponent } from './buscar-trayecto/buscar-trayecto.component';
+import { PublicarTrayectoComponent } from './publicar-trayecto/publicar-trayecto.component';
+import { LoginComponent } from './login/login.component';
+import { PerfilComponent } from './perfil/perfil.component';
+
 
 @NgModule({
   declarations: [
@@ -17,7 +22,15 @@ import { HomeComponent } from './home/home.component';
     RegisterComponent,
     CabeceraComponent,
     PieComponent,
-    HomeComponent
+    HomeComponent,
+    
+    BuscarTrayectoComponent,
+    
+    PublicarTrayectoComponent,
+    
+    LoginComponent,
+    
+    PerfilComponent
   ],
   imports: [
     BrowserModule,

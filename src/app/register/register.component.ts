@@ -27,25 +27,25 @@ export class RegisterComponent implements OnInit {
          Validators.required,
          Validators.pattern(/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/),
        ]), 
-      fechaNacimiento:new FormControl('', [
-        Validators.required, 
-        this.fechaValidator]),
+      // fechaNacimiento:new FormControl('', [
+      //   Validators.required, 
+      //   this.fechaValidator]),
 
     }, this.passwordRepeatValidator)
   }
 
-  fechaValidator(control){
-    if(isNaN(control.value)){
-      return {'fechanacimiento': 'DEBE SER UN NUMERO'};
-    }
+  // fechaValidator(control){
+  //   if(isNaN(control.value)){
+  //     return {'fechanacimiento': 'DEBE SER UN NUMERO'};
+  //   }
 
-    if(control.value < 1980 || control.value > 2000 ){
-      return {'fechanacimiento': 'el año debe estar entre 1980 y 2010'}
-    }
+  //   if(control.value < 1980 || control.value > 2000 ){
+  //     return {'fechanacimiento': 'el año debe estar entre 1980 y 2010'}
+  //   }
 
-    return null
+  //   return null
 
-  }
+  // }
 
   passwordRepeatValidator(group: FormGroup) {
     let pwd = group.controls['pwd'].value

@@ -1,4 +1,4 @@
-<div class="formulario container-fluid col-3">
+<div class="formulario container-fluid col-6 pt-4">
   <h2 class="text-primary">Registro</h2>
 <form novalidate
     [formGroup]="formRegistro"
@@ -24,13 +24,6 @@
       <input class="form-control" type="text" name="mail" formControlName="mail" placeholder="Indica tu mail">
       <small *ngIf="formRegistro.controls['mail'].errors?.required && formRegistro.controls['mail'].dirty" class="form-text text-danger">Este campo es obligatorio</small>          
       <small *ngIf="formRegistro.controls['mail'].errors?.pattern && formRegistro.controls['mail'].dirty" class="form-text text-danger">Este email NO es correcto </small>
-    </div>
-
-    <div>
-      <input class="form-control" type="text" name="fechaNacimiento" formControlName="fechaNacimiento" placeholder="fecha de Nacieminto">    
-      <small *ngIf="formRegistro.controls['fechaNacimiento'].errors?.fechanacimiento && formRegistro.controls['fechaNacimiento'].dirty" class="form-text text-danger">
-        error fecha nacimiento {{ formRegistro.controls['fechaNacimiento'].errors?.fechanacimiento }}
-      </small>
     </div>
 
 

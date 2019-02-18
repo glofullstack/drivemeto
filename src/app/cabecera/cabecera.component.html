@@ -1,15 +1,18 @@
-<ul class="nav justify-content-center mb-5">
+<ul class="nav justify-content-center mb-3">
   <li class="nav-item">
-       <a class="nav-link" href="#">¡TE LLEVO!</a>
+       <a class="nav-link" [routerLink]="['/publicar']" >Publica tu Trayecto</a>
   </li>
   <li class="nav-item">
-      <a class="nav-link" href="#">¿ALGUIEN ME LLEVA?</a>
+      <a class="nav-link" [routerLink]="['/search']">Busca un trayecto</a>
  </li>
 
   <li class="nav-item">
     <a class="nav-link active" [routerLink]="['/register']">Regístrate</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="#">Iniciar Sesion</a>
-  </li>
+    <a class="nav-link" [routerLink]="['/login']">Iniciar Sesion</a>
+  </li><li class="nav-item">
+      <a class="nav-link" [routerLink]="['/perfil']">Perfil</a>
+    </li>
+
 </ul>
