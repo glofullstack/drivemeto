@@ -15,3 +15,6 @@ section{
  .form-control{
      min-width: 15em;
  }
+ section h2{
+     color: blue;
+ }
