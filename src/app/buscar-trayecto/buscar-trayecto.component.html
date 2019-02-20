@@ -4,16 +4,19 @@
       <h2>¿Alguien me lleva?</h2>
         
         <div class="input-group mb-3 pt-5">
-          <input type="text" class="form-control" placeholder="Origen">
+          <input type="text" class="form-control" placeholder="Origen" [(ngModel)]="trayecto.origen" >
         </div> 
         <div class="input-group mb-3">
-            <input type="text" class="form-control" placeholder="Destino">
+            <input type="text" class="form-control" placeholder="Destino" [(ngModel)]="trayecto.destino">
         </div> 
+
+<button type="submit" class="btn btn-success mt-3" (click)="handlerBuscarTrayecto()">BUSCAR</button>
+
 
     </div>  
   </div> 
 </section>
-
+q
 <!-- consulta a la base de datos
 SELECT * FROM drivemeto.trayectos WHERE 
     trayectos.origenlatitud, 

@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { TrayectoService } from '../trayecto.service';
+import { Trayecto } from '.././models/trayecto.model';
+
+
 
 @Component({
   selector: 'buscar-trayecto',
@@ -7,9 +11,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BuscarTrayectoComponent implements OnInit {
 
-  constructor() { }
+    trayecto: Trayecto;
+  constructor(private serviceTrayecto: TrayectoService) {
+    this.trayecto = new Trayecto("","");
+
+   }
 
   ngOnInit() {
   }
 
+  handlerBuscarTrayecto(){
+    this.serviceTrayecto.filtrarTrayecto(this.trayecto)
+  }
 }

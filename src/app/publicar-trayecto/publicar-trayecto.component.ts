@@ -13,27 +13,32 @@ export class PublicarTrayectoComponent implements OnInit {
   ngOnInit() {
     this.formTrayecto = new FormGroup({
       origenTrayecto: new FormControl('',[
-       Validators.required
+       Validators.required,
       ]),
       destinoTrayecto: new FormControl('',[
         Validators.required,
       ]),
       fechaTrayecto: new FormControl('',[
         Validators.required, 
-        this.fechaEval
+        // this.fechaEval
       ]),
       horaTrayecto: new FormControl('',[
         Validators.required,
       ]),
+      minutosTrayecto: new FormControl('',[
+        Validators.required,
+      ]),
+
     })
   }
 
-  fechaEval(control){
-    if(control.value < 2019){
-     return {'fechaTrayecto': 'no puedes viajar al pasado'}
-    }
-    return null
-  }
+  // fechaEval(control){
+  //   console.log(control.value)
+  //   // if(control.value < 2019){
+  //   //  return {'fechaTrayecto': 'no puedes viajar al pasado'}
+  //   // }
+  //    return null
+  // }
 
   manejarFomuTrayecto(){
     console.log(this.formTrayecto.value)
