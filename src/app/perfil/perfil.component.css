@@ -2,3 +2,14 @@
     width: 200px;
     height: 200px;
 }
+
+.perfil{
+    width: 100vw;
+    /* height:100vh ; */
+     /* background-image: url('../.././assets/images/284691-P677SE-456.jpg') ; */
+     background-size:cover;
+     background-position: center;
+     padding-top:2em;
+     color: black;
+     font-weight: bolder;
+}
