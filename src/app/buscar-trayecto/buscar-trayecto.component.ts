@@ -11,16 +11,15 @@ import { Trayecto } from '.././models/trayecto.model';
 })
 export class BuscarTrayectoComponent implements OnInit {
 
-    trayecto: Trayecto;
+  trayecto: Trayecto;
   constructor(private serviceTrayecto: TrayectoService) {
-    this.trayecto = new Trayecto("","");
-
+    this.trayecto = new Trayecto("","","","","","");
    }
 
   ngOnInit() {
   }
 
-  handlerBuscarTrayecto(){
-    this.serviceTrayecto.filtrarTrayecto(this.trayecto)
+  handlerBuscarTrayecto(formValue){
+    this.serviceTrayecto.filtrarTrayecto(formValue)
   }
 }

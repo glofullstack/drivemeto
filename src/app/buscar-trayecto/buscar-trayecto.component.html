@@ -2,21 +2,25 @@
   <div class="container-fluid col-6 pt-4 ">
    <div class="float-right">  
       <h2>¿Alguien me lleva?</h2>
-        
+
+      <form novalidate
+      #formularioBuscar="ngForm"
+      (ngSubmit)="handlerBuscarTrayecto(formularioBuscar.value)" >
+
         <div class="input-group mb-3 pt-5">
-          <input type="text" class="form-control" placeholder="Origen" [(ngModel)]="trayecto.origen" >
+          <input type="text" class="form-control" placeholder="Origen" ngModel name="origenTrayecto" >
         </div> 
         <div class="input-group mb-3">
-            <input type="text" class="form-control" placeholder="Destino" [(ngModel)]="trayecto.destino">
+            <input type="text" class="form-control" placeholder="Destino" ngModel name="destinoTrayecto">
         </div> 
 
-<button type="submit" class="btn btn-success mt-3" (click)="handlerBuscarTrayecto()">BUSCAR</button>
+      <button type="submit" class="btn btn-success mt-3" >BUSCAR</button>
 
-
+</form>
     </div>  
   </div> 
 </section>
-q
+
 <!-- consulta a la base de datos
 SELECT * FROM drivemeto.trayectos WHERE 
     trayectos.origenlatitud, 

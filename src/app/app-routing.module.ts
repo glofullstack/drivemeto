@@ -3,9 +3,10 @@ import { Routes, RouterModule } from '@angular/router';
 import { RegisterComponent } from './register/register.component';
 import { HomeComponent } from './home/home.component';
 import { BuscarTrayectoComponent } from './buscar-trayecto/buscar-trayecto.component';
-import { PublicarTrayectoComponent } from './publicar-trayecto/publicar-trayecto.component';
+// import { PublicarTrayectoComponent } from './publicar-trayecto/publicar-trayecto.component';
 import { LoginComponent } from './login/login.component';
 import { PerfilComponent } from './perfil/perfil.component';
+import { NewTrayectoComponent } from './new-trayecto/new-trayecto.component';
 
 
 const routes: Routes = [
@@ -13,7 +14,7 @@ const routes: Routes = [
   {path:'register', component: RegisterComponent},
   {path:'home', component: HomeComponent},
   {path:'search', component: BuscarTrayectoComponent},
-  {path:'publicar', component: PublicarTrayectoComponent},
+  {path:'publicar', component: NewTrayectoComponent},
   {path:'login', component: LoginComponent},
   {path:'perfil', component: PerfilComponent}
   

@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule,ReactiveFormsModule } from '@angular/forms'
+import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -14,6 +14,7 @@ import { BuscarTrayectoComponent } from './buscar-trayecto/buscar-trayecto.compo
 import { PublicarTrayectoComponent } from './publicar-trayecto/publicar-trayecto.component';
 import { LoginComponent } from './login/login.component';
 import { PerfilComponent } from './perfil/perfil.component';
+import { NewTrayectoComponent } from './new-trayecto/new-trayecto.component';
 
 
 @NgModule({
@@ -30,7 +31,9 @@ import { PerfilComponent } from './perfil/perfil.component';
     
     LoginComponent,
     
-    PerfilComponent
+    PerfilComponent,
+    
+    NewTrayectoComponent
   ],
   imports: [
     BrowserModule,

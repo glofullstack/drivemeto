@@ -1,10 +1,21 @@
 export class Trayecto {
 
-    destino: string;
-    origen: string;
+
+    origenTrayecto: string;
+    destinoTrayecto: string;
+    fechaTrayecto: Date;
+    horaTrayecto: number;
+    minutosTrayecto:number;
+    tipoTrayecto: string;
  
-   constructor(pDestino, pOrigen) { 
-     this.destino ="";
-     this.origen = "";
+   constructor(pDestino, pOrigen, pFecha, pHora, pMinuto, pTipo) { 
+    this.origenTrayecto = pDestino;
+    this.destinoTrayecto = pOrigen;
+    this.fechaTrayecto = pFecha;
+    this.horaTrayecto = pHora;
+    this.minutosTrayecto = pMinuto;
+    this.tipoTrayecto = pTipo;
    }
+
+
  }
