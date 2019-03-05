@@ -2,14 +2,20 @@
 <div class="container-fluid col-6 pt-4">
   <div class="login">
   <h2>Inicia Sesión</h2>
-          
-        <div class="input-group mb-3 pt-5">
-          <input type="mail" class="form-control" placeholder="Tu e-mail">
-        </div> 
+      <form novalidate
+      #formuLogin="ngForm"
+      (ngSubmit)="manejarLogin(formuLogin.value)" >
 
-        <div class="input-group mb-3">
-            <input type="password" class="form-control" placeholder="Contraseña">
-        </div>
-        <button type="submit" class="btn btn-success mt-3" [routerLink]="['/perfil']">Regístrarme</button>
-      </div>
+          <div class="input-group mb-3 pt-5">
+            <input type="mail" class="form-control" name="mail" placeholder="Tu e-mail" ngModel>
+          </div> 
+
+          <div class="input-group mb-3">
+              <input type="password" class="form-control" name="pwd" placeholder="Contraseña" ngModel>
+          </div>
+
+          <button type="submit" class="btn btn-success mt-3">Regístrarme</button>
+        </form>
+ 
+  </div>
 </div> 

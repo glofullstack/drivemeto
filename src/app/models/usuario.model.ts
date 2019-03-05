@@ -7,7 +7,6 @@ export class Usuario {
     sexo: string;
     pwd: string;
     fotoPerfil: string;
-    username: string;
 
     constructor(pNombre, pApellidos, pMail, pFechaNacimiento, pSexo, pPwd, pFotoperfil, pUsername){
         this.nombre = pNombre;
@@ -17,6 +16,5 @@ export class Usuario {
         this.sexo = pSexo;
         this.pwd = pPwd;
         this.fotoPerfil = pFotoperfil;
-        this.username = pUsername;
     }
 }
