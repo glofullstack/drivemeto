@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-
+import { UsuarioService } from '../usuario.service';
+declare var $
 
 @Component({
   selector: 'cabecera',
@@ -9,11 +10,18 @@ import { Router } from '@angular/router';
 })
 export class CabeceraComponent implements OnInit {
 
-  constructor() { }
+  constructor(public serviceUsuario: UsuarioService) { }
 
   ngOnInit() {
   }
 
+  getTokenLogin($event){
+      $('#loginModal').modal('hide')
+  }
+
+  logOut(){
+    localStorage.clear()
+  }
 
   
 }

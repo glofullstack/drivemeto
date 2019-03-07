@@ -8,10 +8,10 @@
       (ngSubmit)="handlerBuscarTrayecto(formularioBuscar.value)" >
 
         <div class="input-group mb-3 pt-5">
-          <input type="text" class="form-control" placeholder="Origen" ngModel name="origenTrayecto" >
+          <input type="text" id="inputPlaceOrigen" class="form-control" placeholder="Origen" ngModel name="origenTrayecto" >
         </div> 
         <div class="input-group mb-3">
-            <input type="text" class="form-control" placeholder="Destino" ngModel name="destinoTrayecto">
+            <input type="text" id="inputPlaceDestino" class="form-control" placeholder="Destino" ngModel name="destinoTrayecto">
         </div> 
 
       <button type="submit" class="btn btn-success mt-3" >BUSCAR</button>
@@ -20,11 +20,3 @@
     </div>  
   </div> 
 </section>
-
-<!-- consulta a la base de datos
-SELECT * FROM drivemeto.trayectos WHERE 
-    trayectos.origenlatitud, 
-    trayectos.origenlongitud, 
-    trayectos.destinolatitud, 
-    trayectos.destinolongitud;
--->

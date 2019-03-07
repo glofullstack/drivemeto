@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Form, FormGroup, FormControl, Validators } from '@angular/forms';
 import { UsuarioService } from '../usuario.service';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 
 @Component({
@@ -57,12 +56,9 @@ export class RegisterComponent implements OnInit {
 
 
   manejarFomulario(){
-    // console.log(this.formRegistro.value)
     this.serviceUsuario.newUsuario(this.formRegistro.value).subscribe(res=>{
       console.log(res)
     })
-    // this.formRegistro.reset();
-
-  }
+   }
 
 }

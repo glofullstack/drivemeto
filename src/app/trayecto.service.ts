@@ -18,12 +18,12 @@ export class TrayectoService {
   }
 
   filtrarTrayecto(trayecto){
-    console.log(trayecto)//de momento solo saca el origen y destino de BUSCAR TRAYECTO
+    // console.log(trayecto)//de momento solo saca el origen y destino de BUSCAR TRAYECTO
   }
 
 
   newTrayecto(trayecto){
-    console.log(trayecto.origen)
+    // console.log(trayecto.origenTrayecto)
     return this.httpClient.post<any[]>(`${this.urlTrayecto}/create`, {
       'origenTrayecto': trayecto.origenTrayecto,
       'latOrigen': trayecto.latOrigen,

@@ -3,3 +3,7 @@ a{
     color: #40E0D0 !important;
     text-transform: uppercase;
 }
+
+li{
+    cursor: pointer;
+}

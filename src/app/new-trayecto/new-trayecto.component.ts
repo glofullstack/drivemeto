@@ -4,6 +4,8 @@ import { from } from 'rxjs';
 import { validateConfig } from '@angular/router/src/config';
 import { TrayectoService } from '../trayecto.service';
 
+declare var google;
+
 
 @Component({
   selector: 'new-trayecto',
@@ -21,6 +23,32 @@ export class NewTrayectoComponent implements OnInit {
    }
 
   ngOnInit() {
+
+// ---------------------------------------------AUTOCOMPLETE DIRECCIONES-------------------
+
+    // restringir los resultados del autocomplete de google a es-españa
+    let options = {
+      componentRestrictions: {country: "es"}
+    }    
+
+    let inputOrigen = document.getElementById('inputPlaceOrigen')
+    let autocompleteOrigen = new google.maps.places.Autocomplete(inputOrigen,options)
+    autocompleteOrigen.setFields(['address_components', 'geometry', 'icon', 'name'])
+      
+    let self = this
+    autocompleteOrigen.addListener('place_changed', () => {
+      let place = autocompleteOrigen.getPlace()
+      // let latP = place.geometry.location.lat()
+      // let lngP = place.geometry.location.lng()
+      console.log(place)
+    })
+
+    let inputDestino = document.getElementById('inputPlaceDestino')
+    let autocompleteDestino = new google.maps.places.Autocomplete(inputDestino,options)
+    autocompleteDestino.setFields(['address_components', 'geometry', 'icon', 'name'])
+
+
+// VALIDACION FORMULARIO-----------------------------------------------------------------
     this.formTrayecto = new FormGroup({
       origenTrayecto: new FormControl('', [Validators.required]),
       destinoTrayecto: new FormControl('', [Validators.required]),
@@ -32,8 +60,14 @@ export class NewTrayectoComponent implements OnInit {
 
   }
 
-  manejarFomuTrayecto(formvalue){
+
+
+
+
+  manejarFomuTrayecto(){
     // console.log(this.formTrayecto.value)
-    this.serviceTrayecto.newTrayecto(this.formTrayecto.value)
+    this.serviceTrayecto.newTrayecto(this.formTrayecto.value).subscribe(res=>{
+      console.log(res)
+    })
   }
 }

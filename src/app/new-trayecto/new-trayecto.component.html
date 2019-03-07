@@ -6,7 +6,7 @@
     (ngSubmit)="manejarFomuTrayecto()">
 
       <div class="input-group mb-3">
-        <input class="form-control" type="text" name="origenTrayecto" formControlName="origenTrayecto" placeholder="Introduce el Origen">
+        <input class="form-control" id="inputPlaceOrigen" type="text" name="origenTrayecto" formControlName="origenTrayecto" placeholder="Introduce el Origen">
         <input type="hidden" name="latOrigen.trayecto">
         <input type="hidden" name="longOrigen.trayecto">
 
@@ -14,7 +14,7 @@
       </div>
 
       <div class="input-group mb-3">
-        <input type="text" class="form-control" name="destinoTrayecto" formControlName="destinoTrayecto" placeholder="Introduce el destino">
+        <input type="text" class="form-control" id="inputPlaceDestino" name="destinoTrayecto" formControlName="destinoTrayecto" placeholder="Introduce el destino">
         <input type="hidden" name="latDestino.trayecto">
         <input type="hidden" name="longDestino.trayecto">
 

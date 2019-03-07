@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { UsuarioService } from '../usuario.service';
 
 @Component({
@@ -8,6 +8,8 @@ import { UsuarioService } from '../usuario.service';
 })
 export class LoginComponent implements OnInit {
 
+  @Output() loginDone = new EventEmitter()
+
   constructor(private serviceUsuario : UsuarioService) { }
 
   ngOnInit() {
@@ -15,9 +17,12 @@ export class LoginComponent implements OnInit {
 
 
   manejarLogin(formValue){
-    this.serviceUsuario.login(formValue).subscribe(res=>{
-      console.log(res)
+    this.serviceUsuario.login(formValue.value).subscribe(res=>{
+      
+      localStorage.setItem('token', JSON.stringify(res['token']));
+      this.loginDone.emit(JSON.stringify(res['token']))
     })
+    formValue.reset()
   }
 
 }
