@@ -2,10 +2,8 @@
   <h2>¿Alguien me lleva?</h2>
   <places (recuperarPlace)="getPlace($event)" inputname="origenTrayecto"></places>
   <places (recuperarPlace)="getPlace($event)" inputname="destinoTrayecto"></places>
-  <button class="btn btn-success">Buscar Trayecto</button>
+  <button class="btn btn-success" (click)="handlerBuscar()">Buscar Trayecto</button>
   <div>
-      <ol *ngFor="let trayecto of listaTrayectos">
-        <li>{{trayecto.origenTrayecto}}</li>
-      </ol>
+    <lista-trayecto [trayectos]="listaTrayectos"></lista-trayecto>
     </div>
 </section>

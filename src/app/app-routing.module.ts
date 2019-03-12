@@ -9,6 +9,7 @@ import { PerfilComponent } from './perfil/perfil.component';
 import { NewTrayectoComponent } from './new-trayecto/new-trayecto.component';
 import { RutasActivasGuard } from './rutas-activas.guard';
 import { EntraComponent } from './entra/entra.component';
+import { TrayectoComponent } from './trayecto/trayecto.component';
 
 
 const routes: Routes = [
@@ -19,7 +20,8 @@ const routes: Routes = [
   {path:'publicar', component: NewTrayectoComponent, canActivate:[RutasActivasGuard]},
   {path:'login', component: LoginComponent},
   {path:'entra', component: EntraComponent},
-  {path:'perfil', component: PerfilComponent, canActivate:[RutasActivasGuard]}
+  {path:'perfil', component: PerfilComponent, canActivate:[RutasActivasGuard]},
+  {path:'trayecto/:idTrayecto', component: TrayectoComponent}
 ];
 
 @NgModule({

@@ -18,6 +18,9 @@ import { PerfilComponent } from './perfil/perfil.component';
 import { NewTrayectoComponent } from './new-trayecto/new-trayecto.component';
 import { EntraComponent } from './entra/entra.component';
 import { PlacesComponent } from './places/places.component';
+import { ListaTrayectoComponent } from './lista-trayecto/lista-trayecto.component';
+import { DetalleTrayectoComponent } from './detalle-trayecto/detalle-trayecto.component';
+import { TrayectoComponent } from './trayecto/trayecto.component';
 
 
 @NgModule({
@@ -40,7 +43,13 @@ import { PlacesComponent } from './places/places.component';
     
     EntraComponent,
     
-    PlacesComponent
+    PlacesComponent,
+    
+    ListaTrayectoComponent,
+    
+    DetalleTrayectoComponent,
+    
+    TrayectoComponent
   ],
   imports: [
     BrowserModule,

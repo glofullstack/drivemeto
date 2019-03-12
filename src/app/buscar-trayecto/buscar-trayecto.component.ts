@@ -19,7 +19,7 @@ export class BuscarTrayectoComponent implements OnInit {
   listaTrayectos: any[];
 
   constructor(private serviceTrayecto: TrayectoService) {
-
+      this.listaTrayectos=[]
    }
 
   ngOnInit() {
@@ -32,11 +32,14 @@ export class BuscarTrayectoComponent implements OnInit {
     }else{
         this.destinoTrayecto=event
     }
-    this.serviceTrayecto.filtrarTrayecto(this.origenTrayecto).subscribe(res=>{
-      this.listaTrayectos = res;
-    })
 
   }
 
- 
+  handlerBuscar(){
+    this.serviceTrayecto.filtrarTrayecto(this.origenTrayecto, this.destinoTrayecto).subscribe(res=>{
+      this.listaTrayectos = res;
+      console.log(this.listaTrayectos)
+    })
+
+  } 
 }
