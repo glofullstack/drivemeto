@@ -4,7 +4,7 @@ section{
      background-image: url('../.././assets/images/fondo_buscar.jpg') ;
      background-size:cover;
      background-position: center;
-     padding-top:2em;
+     /* padding-top:2em; */
      text-align: center;
      
  }
@@ -16,5 +16,5 @@ section{
      min-width: 15em;
  }
  section h2{
-     color: blue;
+     color: rgb(247, 247, 247);
  }

@@ -7,6 +7,8 @@ import { BuscarTrayectoComponent } from './buscar-trayecto/buscar-trayecto.compo
 import { LoginComponent } from './login/login.component';
 import { PerfilComponent } from './perfil/perfil.component';
 import { NewTrayectoComponent } from './new-trayecto/new-trayecto.component';
+import { RutasActivasGuard } from './rutas-activas.guard';
+import { EntraComponent } from './entra/entra.component';
 
 
 const routes: Routes = [
@@ -14,10 +16,10 @@ const routes: Routes = [
   {path:'register', component: RegisterComponent},
   {path:'home', component: HomeComponent},
   {path:'search', component: BuscarTrayectoComponent},
-  {path:'publicar', component: NewTrayectoComponent},
+  {path:'publicar', component: NewTrayectoComponent, canActivate:[RutasActivasGuard]},
   {path:'login', component: LoginComponent},
-  {path:'perfil', component: PerfilComponent}
-  
+  {path:'entra', component: EntraComponent},
+  {path:'perfil', component: PerfilComponent, canActivate:[RutasActivasGuard]}
 ];
 
 @NgModule({

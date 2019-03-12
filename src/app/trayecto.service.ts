@@ -13,30 +13,34 @@ export class TrayectoService {
 
   constructor(private httpClient: HttpClient) { 
     this.arrTrayecto = []
-    this.urlTrayecto = 'http://localhost:3000/api/usuarios'
+    this.urlTrayecto = 'http://localhost:3000/api/trayectos'
 
   }
 
-  filtrarTrayecto(trayecto){
-    // console.log(trayecto)//de momento solo saca el origen y destino de BUSCAR TRAYECTO
+  filtrarTrayecto(origen){
+    console.log(origen)//de momento solo saca el origen y destino de BUSCAR TRAYECTO
+    return this.httpClient.post<any[]>(`${this.urlTrayecto}/buscar`,{
+      'latitudOrigen': origen.latitud,
+      'longitudOrigen': origen.longitud,
+    })
   }
 
 
   newTrayecto(trayecto){
-    // console.log(trayecto.origenTrayecto)
-    return this.httpClient.post<any[]>(`${this.urlTrayecto}/create`, {
+     return this.httpClient.post<any[]>(`${this.urlTrayecto}/newtrayecto`, {
       'origenTrayecto': trayecto.origenTrayecto,
-      'latOrigen': trayecto.latOrigen,
-      'longOrigen': trayecto.longOrigen,
+      'latitudOrigen': trayecto.latitudOrigen,
+      'longitudOrigen': trayecto.longitudOrigen,
       'destinoTrayecto': trayecto.destinoTrayecto,
-      'latDestino': trayecto.latDestino,
-      'longDestino': trayecto.longDestino,
+      'latitudDestino': trayecto.latitudDestino,
+      'longitudDestino': trayecto.longitudDestino,
       'fechaTrayecto': trayecto.fechaTrayecto,
       'horaTrayecto': trayecto.horaTrayecto,
       'minutosTrayecto': trayecto.minutosTrayecto,
       'tipoTrayecto': trayecto.tipoTrayecto,
-
+      'token': trayecto.tokenUsuario,
     })
+
   }
 
 

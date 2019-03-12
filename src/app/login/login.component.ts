@@ -10,19 +10,32 @@ export class LoginComponent implements OnInit {
 
   @Output() loginDone = new EventEmitter()
 
-  constructor(private serviceUsuario : UsuarioService) { }
+  error:boolean
+
+  constructor(private serviceUsuario : UsuarioService) {
+    this.error=false
+   }
 
   ngOnInit() {
   }
 
 
-  manejarLogin(formValue){
+ manejarLogin(formValue){
     this.serviceUsuario.login(formValue.value).subscribe(res=>{
-      
+    
+      // devuelve error en el login si el mail no coincide
+      if(res['error']){
+        return this.error=true
+      }
+                    
+
       localStorage.setItem('token', JSON.stringify(res['token']));
       this.loginDone.emit(JSON.stringify(res['token']))
+    
     })
     formValue.reset()
   }
+
+
 
 }

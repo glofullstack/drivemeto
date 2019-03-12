@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { TrayectoService } from '../trayecto.service';
 
 @Component({
   selector: 'publicar-trayecto',
@@ -7,29 +8,29 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
   styleUrls: ['./publicar-trayecto.component.css']
 })
 export class PublicarTrayectoComponent implements OnInit {
-  formTrayecto: FormGroup;
-  constructor() { }
+  // formTrayecto: FormGroup;
+  constructor(private servicioTrayecto: TrayectoService) { }
 
   ngOnInit() {
-    this.formTrayecto = new FormGroup({
-      origenTrayecto: new FormControl('',[
-       Validators.required,
-      ]),
-      destinoTrayecto: new FormControl('',[
-        Validators.required,
-      ]),
-      fechaTrayecto: new FormControl('',[
-        Validators.required, 
-        // this.fechaEval
-      ]),
-      horaTrayecto: new FormControl('',[
-        Validators.required,
-      ]),
-      minutosTrayecto: new FormControl('',[
-        Validators.required,
-      ]),
+    // this.formTrayecto = new FormGroup({
+    //   origenTrayecto: new FormControl('',[
+    //    Validators.required,
+    //   ]),
+    //   destinoTrayecto: new FormControl('',[
+    //     Validators.required,
+    //   ]),
+    //   fechaTrayecto: new FormControl('',[
+    //     Validators.required, 
+    //     // this.fechaEval
+    //   ]),
+    //   horaTrayecto: new FormControl('',[
+    //     Validators.required,
+    //   ]),
+    //   minutosTrayecto: new FormControl('',[
+    //     Validators.required,
+    //   ]),
 
-    })
+    // })
   }
 
   // fechaEval(control){
@@ -40,7 +41,8 @@ export class PublicarTrayectoComponent implements OnInit {
   //    return null
   // }
 
-  manejarFomuTrayecto(){
-    console.log(this.formTrayecto.value)
-  }
+  // manejarFomuTrayecto(){
+  //   // console.log(this.formTrayecto.value)
+  //   this.servicioTrayecto.newTrayecto(this.formTrayecto.value)
+  // }
 }

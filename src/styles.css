@@ -8,3 +8,9 @@ a{
     color:#F2B134 !important;
 
 }
+
+.modal-body {
+    position: relative;
+    flex: 1 1 auto;
+    padding: 0rem;
+}

@@ -16,6 +16,8 @@ import { PublicarTrayectoComponent } from './publicar-trayecto/publicar-trayecto
 import { LoginComponent } from './login/login.component';
 import { PerfilComponent } from './perfil/perfil.component';
 import { NewTrayectoComponent } from './new-trayecto/new-trayecto.component';
+import { EntraComponent } from './entra/entra.component';
+import { PlacesComponent } from './places/places.component';
 
 
 @NgModule({
@@ -34,7 +36,11 @@ import { NewTrayectoComponent } from './new-trayecto/new-trayecto.component';
     
     PerfilComponent,
     
-    NewTrayectoComponent
+    NewTrayectoComponent,
+    
+    EntraComponent,
+    
+    PlacesComponent
   ],
   imports: [
     BrowserModule,
