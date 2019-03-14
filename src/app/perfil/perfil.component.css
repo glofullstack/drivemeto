@@ -6,10 +6,9 @@
 .perfil{
     width: 100vw;
     /* height:100vh ; */
-     /* background-image: url('../.././assets/images/284691-P677SE-456.jpg') ; */
-     background-size:cover;
-     background-position: center;
+     /* background-image: url('../.././assets/images/284691-P677SE-456.jpg') ;
+     background-image: linear-gradient(to top, #59a379, #64b380, #70c386, #7ed38c, #8de391); */
      padding-top:2em;
-     color: black;
+     color: #F2F2F2;
      font-weight: bolder;
 }

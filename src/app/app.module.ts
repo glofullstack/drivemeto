@@ -21,6 +21,7 @@ import { PlacesComponent } from './places/places.component';
 import { ListaTrayectoComponent } from './lista-trayecto/lista-trayecto.component';
 import { DetalleTrayectoComponent } from './detalle-trayecto/detalle-trayecto.component';
 import { TrayectoComponent } from './trayecto/trayecto.component';
+import { MisTrayectosComponent } from './mis-trayectos/mis-trayectos.component';
 
 
 @NgModule({
@@ -49,7 +50,9 @@ import { TrayectoComponent } from './trayecto/trayecto.component';
     
     DetalleTrayectoComponent,
     
-    TrayectoComponent
+    TrayectoComponent,
+    
+    MisTrayectosComponent
   ],
   imports: [
     BrowserModule,

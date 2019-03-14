@@ -1,14 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
-@import url('https://fonts.googleapis.com/css?family=Dosis:300,400,800');
+
+
+@import url('https://fonts.googleapis.com/css?family=Overpass:300,400,900');
 body{
-    color:#112F41 !important;
-    font-family: 'Dosis', sans-serif;
+    font-family: 'Overpass', sans-serif;
+    font-weight: 900;
 }
 a{
-    color:#F2B134 !important;
-
+    text-decoration: none !important;
+    
 }
-
 .modal-body {
     position: relative;
     flex: 1 1 auto;

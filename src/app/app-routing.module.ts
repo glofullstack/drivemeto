@@ -10,10 +10,11 @@ import { NewTrayectoComponent } from './new-trayecto/new-trayecto.component';
 import { RutasActivasGuard } from './rutas-activas.guard';
 import { EntraComponent } from './entra/entra.component';
 import { TrayectoComponent } from './trayecto/trayecto.component';
+import { MisTrayectosComponent } from './mis-trayectos/mis-trayectos.component';
 
 
 const routes: Routes = [
-  {path:'', component:HomeComponent},
+  {path:'', component: HomeComponent},
   {path:'register', component: RegisterComponent},
   {path:'home', component: HomeComponent},
   {path:'search', component: BuscarTrayectoComponent},
@@ -21,7 +22,8 @@ const routes: Routes = [
   {path:'login', component: LoginComponent},
   {path:'entra', component: EntraComponent},
   {path:'perfil', component: PerfilComponent, canActivate:[RutasActivasGuard]},
-  {path:'trayecto/:idTrayecto', component: TrayectoComponent}
+  {path:'trayecto/:idTrayecto', component: TrayectoComponent},
+  // {path:'mistrayectos', component: MisTrayectosComponent, canActivate:[RutasActivasGuard]}
 ];
 
 @NgModule({

@@ -1,7 +1,7 @@
 section{
     width: 100vw;
     height:85vh ;
-     background-image: url('../.././assets/images/fondo_publicar.jpg') ;
+     /* background-image: url('../.././assets/images/fondo_publicar.jpg') ; */
      background-size:cover;
      background-position: center;
      padding-top:2em;

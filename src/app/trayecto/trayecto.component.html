@@ -1,2 +1,16 @@
-<p>{{trayecto.origenTrayecto}}</p>
-<div #googleMap class="mapa">  </div>
+<div class="container">
+  
+  <div class="row">
+      <div class="col-6">
+          <p>{{trayecto?.origenTrayecto}}</p>
+      </div>
+      <div class="col-6">
+          <div #googleMap class="mapa">  </div>
+      </div>
+  </div>
+  <button class="btn btn-primary" (click)="handlerJoin()" [routerLink]="['/perfil']"> Me apunto! </button>
+  <hr>
+</div> 
+
+
+

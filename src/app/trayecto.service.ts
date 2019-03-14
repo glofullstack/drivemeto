@@ -55,4 +55,12 @@ export class TrayectoService {
   }
 
 
+  joinTrayecto(token, id){
+    return this.httpClient.post<any[]>(`${this.urlTrayecto}/join`, {
+      'token':token,
+      'id':id
+    })
+  }
+
+
 }

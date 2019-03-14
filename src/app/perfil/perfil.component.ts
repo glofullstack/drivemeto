@@ -11,6 +11,7 @@ export class PerfilComponent implements OnInit {
 
 
   formPerfil: FormGroup
+  trayectosUsuario: any[]
   constructor(private usuarioService: UsuarioService) { }
 
   ngOnInit() {
@@ -25,9 +26,9 @@ export class PerfilComponent implements OnInit {
         fotoPerfil: new FormControl(res.fotoPerfil),
       },
       //  this.passwordRepeatValidator
-       )
-
-    })
+      )
+      this.trayectosUsuario=res.trayectos
+  })
 // FIN el ngOnInit------------------------------------------------------
   }
 
@@ -60,6 +61,7 @@ export class PerfilComponent implements OnInit {
 
     this.usuarioService.perfilUpdate(this.formPerfil.value).subscribe(res => {
       console.log(res)
+      
     })
 
   }

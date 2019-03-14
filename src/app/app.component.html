@@ -1,13 +1,7 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1><a [routerLink]="['home']">
-    {{ title }}!
-  </a>
-  </h1>
- </div> 
-
-<cabecera></cabecera>
-<!-- <div class="container-fluid"> -->
-  <router-outlet></router-outlet>
-<!-- </div> -->
-<pie></pie>
+<main [ngStyle]="{'background-image': bgImagen}">
+  <cabecera></cabecera>
+  
+    <router-outlet></router-outlet>
+ 
+  <pie></pie>
+</main>

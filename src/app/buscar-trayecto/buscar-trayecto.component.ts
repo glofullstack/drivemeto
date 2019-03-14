@@ -38,7 +38,7 @@ export class BuscarTrayectoComponent implements OnInit {
   handlerBuscar(){
     this.serviceTrayecto.filtrarTrayecto(this.origenTrayecto, this.destinoTrayecto).subscribe(res=>{
       this.listaTrayectos = res;
-      console.log(this.listaTrayectos)
+      // console.log(this.listaTrayectos)
     })
 
   } 

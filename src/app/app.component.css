@@ -1,12 +1,10 @@
 @import url('https://fonts.googleapis.com/css?family=Major+Mono+Display|Open+Sans:400,800');
  
 
-h1{
-    /* font-family: 'Major Mono Display'; */
-    color: #FF8C00;
-    text-transform: none;
-}
-h1:hover{
-    text-emphasis: none;
-    text-decoration: none;
+main{
+     background-size:cover;
+     background-position: center;
+     width: 100vw;
+     height:100vh ;
+     /* background-image: linear-gradient(to top, #3ea36a, #4db662, #65c954, #84db3e, #a8eb12); */
 }
