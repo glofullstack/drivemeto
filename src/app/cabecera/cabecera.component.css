@@ -1,41 +1,45 @@
 header{
-    height: 40px;
-    margin: 0 auto;
-    /* background-color: rgba(255, 253, 253, 0.726); */
-    -webkit-border-bottom-right-radius: 20px;
-    -webkit-border-bottom-left-radius: 20px;
-    -moz-border-radius-bottomright: 20px;
-    -moz-border-radius-bottomleft: 20px;
-    border-bottom-right-radius: 20px;
-    border-bottom-left-radius: 20px;
+    height: 40px;   
 }
 
 header nav ul li{
-    margin: 0 auto;
+    /* margin: 0 auto; */
     display: inline-block;
-    background: rgba(120, 238, 105, 0.7);
-   
+    background: rgba(255, 255, 255, 0.8);
 }
 
 header nav ul li a{
 	display: block;
 	padding: 10px 20px 0px 20px;
-    text-align: center;
-    color: #f3eaea;
-    
+    /* text-align: center; */
+    color: #245043;    
     height: 40px;
     text-transform:uppercase;
-    font-weight: 300;
+    font-weight: 400;
 }
 
 header nav ul li a:hover{
-   border: 1px  rgba(120, 238, 105, 1) solid; 
-   border-top: 0px;
     height: 45px;
     transition: 0.5s;
+    color:  #639449;
 }
 
 
 header .logo, header nav{
 	float: left;
+}
+
+.modal-body button{
+    margin-top:0.5em;
+}
+
+.rigth{
+    -webkit-border-bottom-right-radius: 10px;
+    -moz-border-radius-bottomright:  10px; 
+    border-bottom-right-radius:  10px;
+}
+.left{
+    -webkit-border-bottom-left-radius:  10px;
+    -moz-border-radius-bottomleft:  10px;
+    border-bottom-left-radius:  10px;
 }

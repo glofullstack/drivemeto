@@ -1,16 +1,17 @@
-/* .home{
-   width: 100vw;
-   height:85vh ;
-    background-size: cover;
-    padding-top:2em;
-} */
+.home{
+    /* clear: both;  */
+     padding-top:3em;
+}
+
+
 
 .ch-item {
     width: 200px;
     height: 200px;
     border-radius: 50%;
     /* background: rgba(63,147,147, 0.8); */
-    background: rgba(113, 241, 96, 0.7);
+    background: rgba(255,255,255,0.6);
+    /* background: linear-gradient(90deg, rgba(240,176,48,1) 0%, rgba(255,167,120,1) 100%); */
     line-height: 200px;
     text-align: center;
     margin: 1em;
@@ -28,7 +29,7 @@
 .ch-info {
 	/* position: absolute; */
     /* background: rgba(63,147,147, 0.8); */
-    background: rgb(173, 243, 127);
+    background: rgba(255,167,120,0.6);
 	width: inherit;
 	height: inherit;
 	border-radius: 50%;

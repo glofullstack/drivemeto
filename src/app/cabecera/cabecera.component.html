@@ -1,7 +1,7 @@
-<header >
+<header class="container" >
   <nav>
     <ul>
-      <li>
+      <li class="left">
         <a [routerLink]="['/publicar']">Publica tu Trayecto</a>
       </li>
       <li>
@@ -14,7 +14,7 @@
       <li>
         <a [routerLink]="['/perfil']" *ngIf="serviceUsuario.isUserLogged()">Mi Perfil</a>
       </li>
-      <li>
+      <li class="rigth" >
         <a data-toggle="modal" data-target="#loginModal" *ngIf="!serviceUsuario.isUserLogged()">Login</a>
       </li>
       <li>

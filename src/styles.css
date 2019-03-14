@@ -8,10 +8,13 @@ body{
 }
 a{
     text-decoration: none !important;
-    
 }
 .modal-body {
     position: relative;
     flex: 1 1 auto;
     padding: 0rem;
 }
+.form-control {
+    font-weight: 300 !important;
+    padding-top: 10px;
+  }

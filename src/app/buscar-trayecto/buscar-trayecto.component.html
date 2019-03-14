@@ -1,8 +1,8 @@
-<section>
-  <h2>¿Alguien me lleva?</h2>
+<section class="buscar container col-6">
+  <h2 class="text">¿Alguien me lleva?</h2>
   <places (recuperarPlace)="getPlace($event)" inputname="origenTrayecto"></places>
   <places (recuperarPlace)="getPlace($event)" inputname="destinoTrayecto"></places>
-  <button class="btn btn-success" (click)="handlerBuscar()">Buscar Trayecto</button>
+  <button class="btn" (click)="handlerBuscar()">Buscar Trayecto</button>
   <div>
     <lista-trayecto [trayectos]="listaTrayectos"></lista-trayecto>
     </div>
