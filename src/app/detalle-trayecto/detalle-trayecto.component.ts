@@ -8,11 +8,9 @@ declare var google
 export class DetalleTrayectoComponent implements OnInit {
 
   @Input() trayecto: any
-
+  
   constructor() { }
   @ViewChild('googleMap') gMap: any
-
-  
 
   ngOnInit() {
    

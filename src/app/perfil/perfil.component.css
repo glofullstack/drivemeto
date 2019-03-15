@@ -1,14 +1,47 @@
-.avatar{
-    width: 200px;
-    height: 200px;
+.fondoperfil {
+  background-color: #fff;
+  border-radius: 10px;
+  margin-top: 3em!important;
+  color: #F2F2F2;
+  font-weight: bolder;
+  box-shadow: -6px 4px 10px rgba(0,0,0,0.6);
 }
 
-.perfil{
-    width: 100vw;
-    /* height:100vh ; */
-     /* background-image: url('../.././assets/images/284691-P677SE-456.jpg') ;
-     background-image: linear-gradient(to top, #59a379, #64b380, #70c386, #7ed38c, #8de391); */
-     padding-top:2em;
-     color: #F2F2F2;
-     font-weight: bolder;
+/* +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+.mistrayectos{
+    font-weight: 300;
+    padding-top:20px;
+    border-top: 1px solid white;
+}
+
+.mistrayectos p{
+    text-transform: uppercase;
+}
+
+.fondoperfil header{
+    /* height: 100%; */
+    /* max-width: 500px;
+    width: 30%; */
+    padding: 20px;
+    text-align: center;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+  }
+
+.fondoperfil header .foto {
+  /* max-width: 100px; */
+  height: auto;
+  /* margin; */
+}
+
+.fondoperfil header .foto img {
+  border-radius: 50%;
+  width:150px ;
+  height:150px;
+}
+/* ++++++++++++++++++++++++++++FORMU+++++++++++++++++++++++++++++++++++++++++ */
+
+.formularioperfil{
+  padding-top: 1.5em;
+  color: green;
 }

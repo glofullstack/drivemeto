@@ -1,4 +1,45 @@
-.mapa{
-    width:300px;
-    height: 300px;
+.card{
+    width: 12em;
+    background: linear-gradient(90deg, rgba(168,255,120,1) 0%, rgba(120,255,214,1) 100%);
+    margin:0.7em;   
 }
+.card:hover{
+   
+    -webkit-box-shadow: -1px 0px 15px 5px rgba(0,0,0,0.32); 
+    box-shadow: -1px 0px 15px 5px rgba(0,0,0,0.32);
+      transition: 0.5s;
+}
+.card-body{
+    margin-top:0px !important;
+    padding: 0px;
+    text-align: center;
+}
+.card-body p{
+   width: 100%;
+   padding: 10px; 
+   margin: 0px;
+}
+.ori{
+    background: #B6FFAE !important;
+}
+.des{
+    background:#B6FFAE !important;
+}
+.hora{
+    background:#B6FFAE !important;
+    font-size: 12px;
+}
+.tipo{
+    background:#B6FFAE !important;
+    border-top: 1px grey dotted;
+    font-size: 12px;
+}
+.imgcard{
+    margin: -30px auto 5px;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background:  linear-gradient(90deg, rgba(168,255,120,1) 0%, rgba(120,255,214,1) 100%);
+    text-align: center;
+}
+

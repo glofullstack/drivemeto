@@ -1,0 +1,5 @@
+.mislista p{
+    display: block;
+    background-color: purple;
+    padding: 3px 0 1px 0;
+}

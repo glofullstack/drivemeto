@@ -1,12 +1,22 @@
-    <!-- <div #googleMap class="mapa">  </div> -->
-   
-    <ol class="list-group" [routerLink]="['/trayecto', trayecto.id]">
-       <li>{{trayecto.origenTrayecto}} | {{trayecto.destinoTrayecto}} </li>
-    </ol>
-    <hr>
+<div class="card"  [routerLink]="['/trayecto', trayecto.id]">
+  <div class="imgcard">
+    <img src="../../assets/images/city.png" class="card-img-top" alt="...">
+  </div>
+  <div class="card-body">
+    <p class="card-text ori"><strong>De:</strong> {{trayecto.origenTrayecto}}</p>
+    <p class="card-text des"><strong>A:</strong> {{trayecto.destinoTrayecto}}</p>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-6 hora">{{trayecto.horaTrayecto}} : {{trayecto.minutosTrayecto}} </div>
+      <div class="col-6 hora">{{trayecto.fechaTrayecto | date: shortDate}}</div>
+    </div>
+  </div>
+  <div class="card-text tipo">{{trayecto.tipoTrayecto}}</div>
+</div>
 
-
-    <!-- destinoTrayecto: "Calle Gran Vía, Madrid, España"
+<!-- {{trayecto.origenTrayecto}} -->
+<!-- destinoTrayecto: "Calle Gran Vía, Madrid, España"
 fechaCreacion: null
 fechaLimite: null
 fechaTrayecto: "2019-03-13T23:00:00.000Z"

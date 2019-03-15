@@ -1,3 +1,5 @@
 <div *ngFor=" let trayecto of mistrayectos" [routerLink]="['/trayecto', trayecto.id]">
- {{ trayecto.origenTrayecto }}
+  <div class="mislista">
+    <p> <strong>A:</strong>{{trayecto.destinoTrayecto}} | {{trayecto.horaTrayecto}} : {{trayecto.minutosTrayecto}}</p>
+  </div>
 </div>

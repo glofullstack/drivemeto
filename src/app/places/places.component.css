@@ -1,4 +1,4 @@
 .places{
-    font-weight: 300;
+    font-weight: 300 !important;
     min-width: 15em;
 }

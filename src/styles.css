@@ -1,20 +1,20 @@
-/* You can add global styles to this file, and also import other style files */
-
-
 @import url('https://fonts.googleapis.com/css?family=Overpass:300,400,900');
+
 body{
     font-family: 'Overpass', sans-serif;
-    font-weight: 900;
 }
+
 a{
     text-decoration: none !important;
 }
+
 .modal-body {
     position: relative;
     flex: 1 1 auto;
     padding: 0rem;
 }
+
 .form-control {
-    font-weight: 300 !important;
+    font-weight: 300;
     padding-top: 10px;
   }

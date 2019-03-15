@@ -11,6 +11,7 @@ export class PerfilComponent implements OnInit {
 
 
   formPerfil: FormGroup
+  usuarioPerfil:any[]
   trayectosUsuario: any[]
   constructor(private usuarioService: UsuarioService) { }
 
@@ -28,6 +29,7 @@ export class PerfilComponent implements OnInit {
       //  this.passwordRepeatValidator
       )
       this.trayectosUsuario=res.trayectos
+      this.usuarioPerfil=res
   })
 // FIN el ngOnInit------------------------------------------------------
   }

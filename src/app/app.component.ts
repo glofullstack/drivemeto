@@ -34,6 +34,9 @@ export class AppComponent {
       case "/publicar":
          this.bgImagen="url('../assets/images/publicar.jpg')"
       break
+      case "/perfil":
+         this.bgImagen="url('../assets/images/perfil.jpg')"
+      break
     }
     console.log(this.bgImagen)
   }
