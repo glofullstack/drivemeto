@@ -16,7 +16,7 @@
 
     <!-- ++++++++++++++++++++++++++++++   FRORMU  ++++++++++++++++++++++++++++++++++++++++++ -->
 
-    <div class="formularioperfil col-8">
+    <div class="formularioperfil col-8 justify-content-center">
       <form novalidate [formGroup]="formPerfil" (ngSubmit)="manejarFomuPerfil()" class="form-horizontal" *ngIf="formPerfil">
 
         <div class="form-group">
@@ -59,13 +59,14 @@
             <input class="form-control" type="text" placeholder="Eres mayor de 18?" formControlName="fecha_nacimiento"
               name="fecha_nacimiento">
             <small *ngIf="formPerfil.controls['fecha_nacimiento'].errors?.fecha_nacimiento && formPerfil.controls['fecha_nacimiento'].dirty">
-              error fecha nacimiento {{ formPerfil.controls['fecha_nacimiento'].errors?.fecha_nacimiento }}
+              error fecha nacimiento {{formPerfil.controls['fecha_nacimiento'].errors?.fecha_nacimiento }}
             </small>
           </div>
         </div>
 
 
-        <button type="submit" class="btn btn-success mb-3" [disabled]="formPerfil.invalid" [ngClass]="{ 'button-disabled ': formPerfil.invalid} ">Realizar
+
+        <button type="submit" class="btn btn-success mb-3 " [disabled]="formPerfil.invalid" [ngClass]="{ 'button-disabled ': formPerfil.invalid} ">Realizar
           cambios</button>
 
 

@@ -1,11 +1,26 @@
 input.ng-invalid.ng-dirty{
     border: 2px solid red;
-
 }
 
 .button-disabled{
     background-color: red;
-
     color:white;
     font-weight: bold;
 }
+
+.newtrayecto{
+    margin-top: 3em;
+    padding: 1.5em 0 1.5em 0;
+    background-color: rgba(255,255,255,0.6);
+    width: 70%;
+}
+
+  .form-control{
+    /* text-align: center; */
+    border-radius: 0;
+    border: 0;
+    border-bottom: 1px solid rgb(56, 80, 53);
+  }
+  .form-group{
+    /* text-align: center; */
+  }

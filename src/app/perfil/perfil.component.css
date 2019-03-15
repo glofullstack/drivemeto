@@ -36,12 +36,22 @@
 
 .fondoperfil header .foto img {
   border-radius: 50%;
-  width:150px ;
-  height:150px;
+  width: 150px;
+  height: 150px;
 }
 /* ++++++++++++++++++++++++++++FORMU+++++++++++++++++++++++++++++++++++++++++ */
 
 .formularioperfil{
-  padding-top: 1.5em;
+  padding: 20px 0 0 3em;
   color: green;
+  /* text-align: center; */
+}
+.form-control{
+  /* text-align: center; */
+  border-radius: 0;
+  border: 0;
+  border-bottom: 1px solid rgb(56, 80, 53);
+}
+.form-group{
+  /* text-align: center; */
 }

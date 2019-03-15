@@ -16,7 +16,7 @@
 }
 .card-body p{
    width: 100%;
-   padding: 10px; 
+   padding: 5px; 
    margin: 0px;
 }
 .ori{
@@ -30,9 +30,11 @@
     font-size: 12px;
 }
 .tipo{
-    background:#B6FFAE !important;
+    background:  linear-gradient(90deg, rgba(168,255,120,1) 0%, rgba(120,255,214,1) 100%);;
     border-top: 1px grey dotted;
     font-size: 12px;
+    font-weight: 900; 
+    text-transform: uppercase;
 }
 .imgcard{
     margin: -30px auto 5px;
