@@ -46,12 +46,12 @@
   color: green;
   /* text-align: center; */
 }
-.form-control{
+.perfil .form-control{
   /* text-align: center; */
   border-radius: 0;
   border: 0;
   border-bottom: 1px solid rgb(56, 80, 53);
 }
-.form-group{
+.perfil .form-group{
   /* text-align: center; */
 }

@@ -30,6 +30,7 @@ export class TrayectoService {
 
 
   newTrayecto(trayecto){
+    console.log(trayecto.origenTrayecto)
      return this.httpClient.post<any[]>(`${this.urlTrayecto}/newtrayecto`, {
       'origenTrayecto': trayecto.origenTrayecto,
       'latitudOrigen': trayecto.latitudOrigen,

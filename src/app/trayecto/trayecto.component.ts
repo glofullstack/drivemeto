@@ -9,7 +9,10 @@ declare var google
 })
 export class TrayectoComponent implements OnInit {
 
+  
   trayecto: any
+  // contiene los usuarios apuntados a un trayecto
+  usuariosTrayecto:any
 
   constructor(
     private activatedRoute: ActivatedRoute,
@@ -18,13 +21,13 @@ export class TrayectoComponent implements OnInit {
     this.activatedRoute.params.subscribe(params => {
       this.serviceTrayecto.getTrayectoById(params.idTrayecto).subscribe(res => {
         this.trayecto = res
+        this.usuariosTrayecto=this.trayecto.usuarios
         console.log(res)
         // se lanza el mapa
         this.loadMap()
       })
 
     })
-
   }
 
   @ViewChild('googleMap') gMap: any
@@ -37,6 +40,21 @@ export class TrayectoComponent implements OnInit {
   ngOnInit() {
 
   }
+
+// si e
+creadorTrayecto(){
+  for(let i; i<this.usuariosTrayecto.length; i++){
+    if(this.trayecto.fkusuario==this.usuariosTrayecto[i].id){
+      console.log(this.usuariosTrayecto[i].id)
+      return false
+    }else{
+      console.log(this.usuariosTrayecto[i].id)
+
+      return true
+    }
+  }
+}
+
 // crea el mapa
   loadMap() {
     this.directionsService = new google.maps.DirectionsService()
@@ -74,6 +92,7 @@ export class TrayectoComponent implements OnInit {
         console.log(res)
     })
   }
+
 
 
 

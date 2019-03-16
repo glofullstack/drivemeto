@@ -3,5 +3,36 @@
   height: 300px;
 }
 
+.trayecto{
+  color:white;
+}
+  .usuario{
+    width: 100px;
+    height: 100px;
+    background-color: palevioletred;
+    border: 4px solid white;
+    border-radius: 50%;
+    float: left;
+    text-align: center;
+    margin: 1em;
+    padding: 40px 0 10px 0;
 
-  
+}
+
+.usuario::after{
+  clear: both;
+}
+
+.join{
+  width: 100px;
+  height: 100px;
+  background-color: palevioletred;
+  border: 4px solid white;
+  border-radius: 50%;
+  float: left;
+  text-align: center;
+  margin: 1em;
+  font-weight: 900;
+  font-size: 20px;
+  padding: 40px 0 10px 0;
+}

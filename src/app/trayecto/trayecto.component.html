@@ -1,23 +1,30 @@
 <div class="trayecto container">
   <div class="row">
-      <div class="col-6">
-          <h3>Info Trayecto</h3>
-          <p><strong>Origen:</strong> {{trayecto?.origenTrayecto}}</p>
-          <p><strong>Destino:</strong> {{trayecto?.destinoTrayecto}}</p>
-          <p><strong>Fecha:</strong> {{trayecto.fechaTrayecto | date: shortDate}}</p>
-          <p><strong>Hora:</strong> {{trayecto.horaTrayecto}}:{{trayecto.minutosTrayecto}} </p>
-          <p><strong>Tipo de trayecto: </strong> {{ trayecto.tipoTrayecto }}</p>
-          
+    <div class="col-6">
+      <h3>Info Trayecto</h3>
+      <p><strong>Origen:</strong> {{trayecto?.origenTrayecto}}</p>
+      <p><strong>Destino:</strong> {{trayecto?.destinoTrayecto}}</p>
+      <p><strong>Fecha:</strong> {{trayecto?.fechaTrayecto | date: shortDate}}</p>
+      <p><strong>Hora:</strong> {{trayecto?.horaTrayecto}}:{{trayecto?.minutosTrayecto}} </p>
+      <p><strong>Tipo de trayecto: </strong> {{ trayecto?.tipoTrayecto }}</p>
+      <p><strong>Creador: </strong> {{ trayecto?.fkUsuario }}</p>
+
+      <div>
+        <p><strong>usuarios apuntados: </strong></p>
+        <div *ngFor="let usuario of usuariosTrayecto" class="usuario">
+          <div> {{ usuario?.nombre | uppercase }} </div>
+        </div>
+        <div class="join" (click)="handlerJoin()"  [routerLink]="['/perfil']"> 
+            <p>+1</p>
+            <p>¡Me apunto!</p>
+        </div>
+      </div>
 
 
-      </div>
-      <div class="col-6">
-          <div #googleMap class="mapa">  </div>
-      </div>
+    </div>
+    <div class="col-6">
+      <div #googleMap class="mapa"> </div>
+    </div>
   </div>
-  <button class="btn btn-primary" (click)="handlerJoin()" [routerLink]="['/perfil']"> Me apunto! </button>
-  <hr>
-</div> 
-
-
-
+  <!-- <button class="btn btn-warning" (click)="handlerJoin()" [routerLink]="['/perfil']"> Me apunto! </button> -->
+</div>

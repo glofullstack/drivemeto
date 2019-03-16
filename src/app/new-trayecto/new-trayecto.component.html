@@ -1,28 +1,29 @@
-<section class="newtrayecto content-justify-end">
-  <div class="formularionew container pt-4">
+<section class="newtrayecto">
+  <div class="formularionew">
     <h2>¡Te llevo!</h2>
     <form novalidate [formGroup]="formTrayecto" (ngSubmit)="manejarFomuTrayecto()">
 
-      <div class="input-group">
+      <div class="newinput input-group">
         <places (recuperarPlace)="getPlace($event)" inputname="origenTrayecto"></places>
         <small *ngIf="formTrayecto.controls['origenTrayecto'].errors?.required && formTrayecto.controls['origenTrayecto'].dirty"
           class="form-text text-danger">Este campo es obligatorio</small>
       </div>
 
-      <div class="input-group">
+      <div class="newinput input-group">
         <places (recuperarPlace)="getPlace($event)" inputname="destinoTrayecto"></places>
         <small *ngIf="formTrayecto.controls['destinoTrayecto'].errors?.required && formTrayecto.controls['destinoTrayecto'].dirty"
           class="form-text text-danger">Este campo es obligatorio</small>
       </div>
 
-      <div class="input-group">
-        <input class="form-control" type="date" min="{{ fechaActual | date:'yyyy-MM-dd' }}" name="fechaTrayecto"
+      <div class="input-group mb-3">
+        <input class="form-control-sm fecha" type="date" min="{{ fechaActual | date:'yyyy-MM-dd' }}" name="fechaTrayecto"
           formControlName="fechaTrayecto">
       </div>
 
       <div class="input-group">
-        <select class="form-control-sm" name="horaTrayecto" formControlName="horaTrayecto">
-          <option value="10" selected>10</option>
+          <label for="horaTrayecto">HORA</label>
+        <select class=" tiempo form-control-sm ml-3 mr-3" name="horaTrayecto" formControlName="horaTrayecto">
+          <option value="10" selected></option>
           <option value="11">11</option>
           <option value="12">12</option>
           <option value="13">13</option>
@@ -46,8 +47,10 @@
           <option value="7">07</option>
           <option value="8">08</option>
           <option value="9">09</option>
-        </select>
-        <select class="form-control-sm" name="minutosTrayecto" formControlName="minutosTrayecto">
+        </select> 
+        
+
+        <select class="form-control-sm tiempo " name="minutosTrayecto" formControlName="minutosTrayecto">
           <option value="00" selected>00</option>
           <option value="10">10</option>
           <option value="20">20</option>
@@ -55,23 +58,24 @@
           <option value="40">40</option>
           <option value="50">50</option>
         </select>
-
         <small *ngIf="formTrayecto.controls['horaTrayecto'].errors?.required && formTrayecto.controls['horaTrayecto'].dirty"
           class="form-text text-danger">Este campo es obligatorio</small>
       </div>
 
-      <div class="form-check form-check-inline">
+
+      <div class="mt-3 form-check form-check-inline">
         <input class="form-check-input" type="radio" name="tipoTrayecto" formControlName="tipoTrayecto" value="habitual"
           checked="checked">
         <label class="form-check-label" for="habitual">Habitual</label>
       </div>
+
 
       <div class="form-check form-check-inline">
         <input class="form-check-input" type="radio" name="tipoTrayecto" formControlName="tipoTrayecto" value="espontaneo">
         <label class="form-check-label" for="espontaneo">Espontáneo</label>
       </div>
       <div>
-        <button type="submit" class="btn btn-success" [disabled]="formTrayecto.invalid" [ngClass]="{ 'button-disabled ': formTrayecto.invalid}">Publicar</button>
+        <button type="submit" class="btn btn-warning mt-3" [disabled]="formTrayecto.invalid" [ngClass]="{ 'button-disabled ': formTrayecto.invalid}">Publicar</button>
       </div>
     </form>
   </div>

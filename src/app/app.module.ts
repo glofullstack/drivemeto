@@ -31,27 +31,27 @@ import { MisTrayectosComponent } from './mis-trayectos/mis-trayectos.component';
     CabeceraComponent,
     PieComponent,
     HomeComponent,
-    
+
     BuscarTrayectoComponent,
-    
+
     PublicarTrayectoComponent,
-    
+
     LoginComponent,
-    
+
     PerfilComponent,
-    
+
     NewTrayectoComponent,
-    
+
     EntraComponent,
-    
+
     PlacesComponent,
-    
+
     ListaTrayectoComponent,
-    
+
     DetalleTrayectoComponent,
-    
+
     TrayectoComponent,
-    
+
     MisTrayectosComponent
   ],
   imports: [
@@ -60,7 +60,7 @@ import { MisTrayectosComponent } from './mis-trayectos/mis-trayectos.component';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    
+
   ],
   providers: [],
   bootstrap: [AppComponent]

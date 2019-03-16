@@ -82,7 +82,7 @@ export class NewTrayectoComponent implements OnInit {
   this.formTrayecto.value.longitudDestino = this.destinoTrayecto.longitud
   
   this.formTrayecto.value.tokenUsuario = JSON.parse(localStorage.getItem('token'))
-
+  // console.log(this.formTrayecto.value)
 // pasamos todos los datos del formulario con los extraidos del getplaces al servicio
   this.serviceTrayecto.newTrayecto(this.formTrayecto.value).subscribe(res=>{
        console.log(res)
