@@ -18,6 +18,7 @@ export class TrayectoComponent implements OnInit {
     this.activatedRoute.params.subscribe(params => {
       this.serviceTrayecto.getTrayectoById(params.idTrayecto).subscribe(res => {
         this.trayecto = res
+        console.log(res)
         // se lanza el mapa
         this.loadMap()
       })

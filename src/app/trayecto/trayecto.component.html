@@ -1,7 +1,15 @@
-<div class="container">
+<div class="trayecto container">
   <div class="row">
       <div class="col-6">
-          <p>{{trayecto?.origenTrayecto}}</p>
+          <h3>Info Trayecto</h3>
+          <p><strong>Origen:</strong> {{trayecto?.origenTrayecto}}</p>
+          <p><strong>Destino:</strong> {{trayecto?.destinoTrayecto}}</p>
+          <p><strong>Fecha:</strong> {{trayecto.fechaTrayecto | date: shortDate}}</p>
+          <p><strong>Hora:</strong> {{trayecto.horaTrayecto}}:{{trayecto.minutosTrayecto}} </p>
+          <p><strong>Tipo de trayecto: </strong> {{ trayecto.tipoTrayecto }}</p>
+          
+
+
       </div>
       <div class="col-6">
           <div #googleMap class="mapa">  </div>

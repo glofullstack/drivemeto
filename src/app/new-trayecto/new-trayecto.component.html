@@ -3,24 +3,24 @@
     <h2>¡Te llevo!</h2>
     <form novalidate [formGroup]="formTrayecto" (ngSubmit)="manejarFomuTrayecto()">
 
-      <div class="input-group mb-3">
+      <div class="input-group">
         <places (recuperarPlace)="getPlace($event)" inputname="origenTrayecto"></places>
         <small *ngIf="formTrayecto.controls['origenTrayecto'].errors?.required && formTrayecto.controls['origenTrayecto'].dirty"
           class="form-text text-danger">Este campo es obligatorio</small>
       </div>
 
-      <div class="input-group mb-3">
+      <div class="input-group">
         <places (recuperarPlace)="getPlace($event)" inputname="destinoTrayecto"></places>
         <small *ngIf="formTrayecto.controls['destinoTrayecto'].errors?.required && formTrayecto.controls['destinoTrayecto'].dirty"
           class="form-text text-danger">Este campo es obligatorio</small>
       </div>
 
-      <div class="input-group mb-3">
+      <div class="input-group">
         <input class="form-control" type="date" min="{{ fechaActual | date:'yyyy-MM-dd' }}" name="fechaTrayecto"
           formControlName="fechaTrayecto">
       </div>
 
-      <div class="input-group mb-3">
+      <div class="input-group">
         <select class="form-control-sm" name="horaTrayecto" formControlName="horaTrayecto">
           <option value="10" selected>10</option>
           <option value="11">11</option>
@@ -71,7 +71,7 @@
         <label class="form-check-label" for="espontaneo">Espontáneo</label>
       </div>
       <div>
-        <button type="submit" class="btn btn-success mt-3" [disabled]="formTrayecto.invalid" [ngClass]="{ 'button-disabled ': formTrayecto.invalid}">Publicar</button>
+        <button type="submit" class="btn btn-success" [disabled]="formTrayecto.invalid" [ngClass]="{ 'button-disabled ': formTrayecto.invalid}">Publicar</button>
       </div>
     </form>
   </div>

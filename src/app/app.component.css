@@ -1,8 +1,9 @@
 @import url('https://fonts.googleapis.com/css?family=Major+Mono+Display|Open+Sans:400,800');
  main{
-     background-size:cover;
-     background-position: center;
-     width: 100vw;
+     background-size: cover;
      height:100vh ;
+     background-repeat:no-repeat;
+     background-attachment:fixed;
+     background-position:center;
      /* background-image: linear-gradient(to top, #3ea36a, #4db662, #65c954, #84db3e, #a8eb12); */
 }

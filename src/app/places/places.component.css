@@ -1,5 +1,5 @@
 .places{
-    font-weight: 300 !important;
+    font-weight: 900 !important;
     min-width: 15em;
 }
   .form-control{
@@ -7,7 +7,12 @@
     border-radius: 0;
     border: 0;
     border-bottom: 1px solid rgb(56, 80, 53);
+    /* background: rgba(222, 233, 220, 0.596); */
     background: transparent;
+    font-weight: 900 !important;
+    font-size: 18px;
+    color: black !important; 
+    text-transform: uppercase;
   }
   .form-group{
     /* text-align: center; */
