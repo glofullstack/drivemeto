@@ -17,7 +17,7 @@ export class UsuarioService {
 
   // /recoge los valores introducidos en el formulario de resgitro nuevo usuario a traves del manejador y desde aqui los manda por peticion POST a la base de datos 
   newUsuario(usuario){
-    // console.log(usuario.nombre)
+    console.log(usuario.nombre)
     return this.httpClient.post<any[]>(`${this.urlUsuario}/create`, {
       'nombre': usuario.nombre,
       'mail': usuario.mail,

@@ -17,9 +17,13 @@
       <li class="rigth" >
         <a data-toggle="modal" data-target="#loginModal" *ngIf="!serviceUsuario.isUserLogged()">Login</a>
       </li>
+      <li >
+        <a *ngIf="serviceUsuario.isUserLogged()"  [routerLink]="['/perfil']"> ¡Hola {{ userName }}!</a>
+      </li>
       <li class="rigth">
         <a *ngIf="serviceUsuario.isUserLogged()" (click)="logOut()" [routerLink]="['/home']">LogOut</a>
       </li>
+      
     </ul>
   </nav>
 </header>

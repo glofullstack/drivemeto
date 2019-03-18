@@ -22,6 +22,7 @@ import { ListaTrayectoComponent } from './lista-trayecto/lista-trayecto.componen
 import { DetalleTrayectoComponent } from './detalle-trayecto/detalle-trayecto.component';
 import { TrayectoComponent } from './trayecto/trayecto.component';
 import { MisTrayectosComponent } from './mis-trayectos/mis-trayectos.component';
+import { EspanaPipe } from './espana.pipe';
 
 
 @NgModule({
@@ -52,7 +53,9 @@ import { MisTrayectosComponent } from './mis-trayectos/mis-trayectos.component';
 
     TrayectoComponent,
 
-    MisTrayectosComponent
+    MisTrayectosComponent,
+
+    EspanaPipe
   ],
   imports: [
     BrowserModule,

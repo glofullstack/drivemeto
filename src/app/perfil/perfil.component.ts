@@ -8,8 +8,6 @@ import { UsuarioService } from '../usuario.service';
   styleUrls: ['./perfil.component.css']
 })
 export class PerfilComponent implements OnInit {
-
-
   formPerfil: FormGroup
   usuarioPerfil:any[]
   trayectosUsuario: any[]
@@ -17,7 +15,6 @@ export class PerfilComponent implements OnInit {
 
   ngOnInit() {
     this.usuarioService.perfilUser().subscribe(res => {
-
       this.formPerfil = new FormGroup({
         nombre: new FormControl(res.nombre),
         apellidos: new FormControl( res.apellidos),
@@ -49,10 +46,6 @@ export class PerfilComponent implements OnInit {
   passwordRepeatValidator(group: FormGroup) {
     let pwd = group.controls['pwd'].value
     let pwdRepeat = group.controls['pwdRepeat'].value
-
-    // console.log(group.controls['pwd'].value)
-    // console.log(group.controls['pwdRepeat'].value)
-
     return (pwd == pwdRepeat) ? null : { repeatClave: "Las contraseñas deben ser iguales" }
   }
 
@@ -60,7 +53,6 @@ export class PerfilComponent implements OnInit {
   manejarFomuPerfil() {
   //  recibe ls datos del formulario del perfil
     this.formPerfil.value.token = JSON.parse(localStorage.getItem('token'))
-
     this.usuarioService.perfilUpdate(this.formPerfil.value).subscribe(res => {
       console.log(res)
       

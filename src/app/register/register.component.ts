@@ -28,9 +28,6 @@ export class RegisterComponent implements OnInit {
          Validators.required,
          Validators.pattern(/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/),
        ]), 
-      // fechaNacimiento:new FormControl('', [
-      //   Validators.required, 
-      //   this.fechaValidator]),
 
     }, this.passwordRepeatValidator)
   }
@@ -45,7 +42,9 @@ export class RegisterComponent implements OnInit {
 
   manejarFomulario(){
     this.serviceUsuario.newUsuario(this.formRegistro.value).subscribe(res=>{
+      
       console.log(res)
+      
     })
    }
 

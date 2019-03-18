@@ -47,8 +47,6 @@ export class TrayectoService {
 
   }
 
-
-
   getTrayectoById(idTrayecto){
     return this.httpClient.post<any[]>(`${this.urlTrayecto}/trayecto`, {
       'id':idTrayecto
@@ -63,5 +61,18 @@ export class TrayectoService {
     })
   }
 
+
+  creadorlogeado(token){
+    return this.httpClient.post<any>(`${this.urlTrayecto}/usercreador`, {
+      'token': JSON.parse(localStorage.getItem('token'))
+    })
+  }
+
+  borraut(token, id){
+    return this.httpClient.post<any>(`${this.urlTrayecto}/borraut`, {
+      'token': JSON.parse(localStorage.getItem('token')),
+      'id':id
+    })
+  }
 
 }

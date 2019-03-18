@@ -1,4 +1,4 @@
-<div class="trayecto container">
+<div class="otro container">
   <div class="row">
     <div class="col-6">
       <h3>Info Trayecto</h3>
@@ -7,17 +7,22 @@
       <p><strong>Fecha:</strong> {{trayecto?.fechaTrayecto | date: shortDate}}</p>
       <p><strong>Hora:</strong> {{trayecto?.horaTrayecto}}:{{trayecto?.minutosTrayecto}} </p>
       <p><strong>Tipo de trayecto: </strong> {{ trayecto?.tipoTrayecto }}</p>
-      <p><strong>Creador: </strong> {{ trayecto?.fkUsuario }}</p>
+      <p><strong>Creador: </strong> {{ trayecto?.nombre }} | contacto creador: {{trayecto?.mail}}</p>
 
-      <div>
-        <p><strong>usuarios apuntados: </strong></p>
+      <div  >
+        <p><strong>Usuarios Apuntados: </strong></p>
         <div *ngFor="let usuario of usuariosTrayecto" class="usuario">
           <div> {{ usuario?.nombre | uppercase }} </div>
         </div>
-        <div class="join" (click)="handlerJoin()"  [routerLink]="['/perfil']"> 
-            <p>+1</p>
-            <p>¡Me apunto!</p>
+
+        <div class="join" *ngIf="!creadorlogado() && !usuarioApuntado()" (click)="handlerJoin()"  [routerLink]="['/perfil']"> 
+          <p>¡Me apunto!</p>
         </div>
+
+        <div class="meborro" *ngIf="!creadorlogado() && usuarioApuntado()" (click)="handlerBorrarse()"  [routerLink]="['/perfil']"> 
+          <p>¡Me borro!</p>
+        </div>
+
       </div>
 
 

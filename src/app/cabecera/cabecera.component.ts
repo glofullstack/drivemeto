@@ -10,9 +10,13 @@ declare var $
 })
 export class CabeceraComponent implements OnInit {
 
+  userName: string
   constructor(public serviceUsuario: UsuarioService) { }
 
   ngOnInit() {
+    this.serviceUsuario.perfilUser().subscribe(res=>{
+     this.userName= res.nombre
+    })
   }
 
   getTokenLogin($event){

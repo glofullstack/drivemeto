@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { TrayectoService } from '../trayecto.service';
 import { ActivatedRoute } from '@angular/router';
+import { UsuarioService } from '../usuario.service';
 declare var google
 @Component({
   selector: 'trayecto',
@@ -9,25 +10,29 @@ declare var google
 })
 export class TrayectoComponent implements OnInit {
 
-  
+
   trayecto: any
   // contiene los usuarios apuntados a un trayecto
-  usuariosTrayecto:any
+  usuariosTrayecto: any
+  userlogado: any
 
   constructor(
     private activatedRoute: ActivatedRoute,
-    private serviceTrayecto: TrayectoService
+    private serviceTrayecto: TrayectoService,
+    private servicioUsuario: UsuarioService,
   ) {
     this.activatedRoute.params.subscribe(params => {
       this.serviceTrayecto.getTrayectoById(params.idTrayecto).subscribe(res => {
+        // INFO DEL TRAYECTO
         this.trayecto = res
-        this.usuariosTrayecto=this.trayecto.usuarios
-        console.log(res)
-        // se lanza el mapa
+        // INFO DE LOS USUAIROS APUNTADOS AL TRAYECTO
+        this.usuariosTrayecto = this.trayecto.usuarios
         this.loadMap()
       })
 
     })
+
+ 
   }
 
   @ViewChild('googleMap') gMap: any
@@ -38,30 +43,21 @@ export class TrayectoComponent implements OnInit {
   directionsDisplay: any
 
   ngOnInit() {
+      // el id del usuario logado
+      this.serviceTrayecto.creadorlogeado(JSON.parse(localStorage.getItem('token'))).subscribe(res => {
+        this.userlogado = res.id
+      })
+  
 
   }
 
-// si e
-creadorTrayecto(){
-  for(let i; i<this.usuariosTrayecto.length; i++){
-    if(this.trayecto.fkusuario==this.usuariosTrayecto[i].id){
-      console.log(this.usuariosTrayecto[i].id)
-      return false
-    }else{
-      console.log(this.usuariosTrayecto[i].id)
-
-      return true
-    }
-  }
-}
-
-// crea el mapa
+  // crea el mapa
   loadMap() {
     this.directionsService = new google.maps.DirectionsService()
     this.directionsDisplay = new google.maps.DirectionsRenderer()
-// parametros del mapa
+    // parametros del mapa
     let propsMap = {
-      center: new google.maps.LatLng(40,-3),
+      center: new google.maps.LatLng(40, -3),
       zoom: 2,
       mapTypeId: google.maps.MapTypeId.ROADS,
       disableDefaultUI: true
@@ -73,7 +69,7 @@ creadorTrayecto(){
     this.generateRoute(
       new google.maps.LatLng(this.trayecto.latitudOrigen, this.trayecto.longitudOrigen),
       new google.maps.LatLng(this.trayecto.latitudDestino, this.trayecto.longitudDestino))
- }
+  }
 
   generateRoute(start, end) {
     let requestOpts = {
@@ -87,13 +83,31 @@ creadorTrayecto(){
     })
   }
 
-  handlerJoin(){
-    this.serviceTrayecto.joinTrayecto(JSON.parse(localStorage.getItem('token')), this.trayecto.id).subscribe(res=>{
-        console.log(res)
+  handlerJoin() {
+    this.serviceTrayecto.joinTrayecto(JSON.parse(localStorage.getItem('token')), this.trayecto.id).subscribe(res => {
+      console.log(res)
     })
   }
 
 
+  //BORRAR EL USUARIO LOGEADO DE UN TRAYECTO
+  handlerBorrarse(){
+    this.serviceTrayecto.borraut(JSON.parse(localStorage.getItem('token')), this.trayecto.id).subscribe(res=>{
+      console.log(res)
+    })
+  }
+
+
+  //COMPARA SI EL CREADOR DEL TRYAECTO ES EL USUARIO LOGADO
+  creadorlogado() {
+    return ((this.trayecto.fkUsuario == this.userlogado) ? true : false);
+  }
+
+  // UN USUARIO NO PUEDE APUNTARSE DOS VECES A UN TRAYECTO
+  usuarioApuntado() {
+    return this.usuariosTrayecto.filter(item => item.id == this.userlogado).length > 0 ? true : false
+    // si contador igual a 0 el usuario logado no esta apuntado al trayecto si es mayor, esta
+  }
 
 
 

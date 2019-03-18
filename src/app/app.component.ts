@@ -14,6 +14,7 @@ export class AppComponent {
   constructor(  private activatedRoute: ActivatedRoute,
     private router: Router){
       router.events.subscribe(val=>{
+        // SACA LA RUTA ACTUAL
           if(val instanceof NavigationEnd){
             this.imagenRouter(router.url)
           }
@@ -22,6 +23,7 @@ export class AppComponent {
   ngOnInit(){
   }
 
+  // CAMBIA LA IMAGEN DE FONDO EN FUNCION DE LA RUTA EN LA QUE SE ENCUENTRE
   imagenRouter(routerUrl){
 
     switch(routerUrl){
@@ -41,7 +43,7 @@ export class AppComponent {
        this.bgImagen=" url('../assets/images/home.jpg')"
 
     }
-    console.log(this.bgImagen)
+
   }
 
   
