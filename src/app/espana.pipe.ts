@@ -6,9 +6,9 @@ import { Pipe, PipeTransform } from '@angular/core';
 export class EspanaPipe implements PipeTransform {
 
   transform(value: any, args?: any): any {
-    // let direccioncompleta = value.split(' ')   
-    // let direccionsin = direccioncompleta.map(item=> this.capitalizeWord(item))
-    // return direccionsin.join(' ');
+
+    let direccioncompleta = value.split(', España')   
+    return direccioncompleta[0];
     
   }
 

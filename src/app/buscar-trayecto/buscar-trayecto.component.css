@@ -46,3 +46,52 @@
   -moz-box-shadow: 9px 10px 22px -6px rgba(252, 243, 243, 0.6);
   box-shadow: 9px 10px 22px -6px rgba(252, 243, 243, 0.6);
 }
+
+
+
+/* MODAL  NO HAY TRAYECTOS */
+#trayectoModal .modal-content {
+  position: relative;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  /* width: 100%; */
+  pointer-events: auto;
+  background-color: transparent;
+  background-clip: border-box;
+  border:0;
+  border-radius: 0;
+  outline: 0;
+}
+
+#trayectoModal .btn{
+  background: linear-gradient(90deg, rgba(155, 226, 103, 1) 0%, rgba(110, 205, 143, 1) 100%);
+}
+.modal-body{
+  background-image: url('../../assets/images/1750.jpg');
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: bottom;
+  margin: 0 auto;
+  text-align: center;
+  max-width: 100%;
+  height: 14em;
+  background-color: aliceblue;
+  padding: 1em;
+}
+
+.texto-modal{
+  border: 2px solid white;
+  padding: 1em 1em 1em 1em;
+  color: rgb(8, 111, 170);
+  font-size: 1.5em;
+  font-weight: 900;
+
+}
+
+.botonmodal{
+  margin-top: 0.5em;
+  border-radius: 0px;
+  
+}

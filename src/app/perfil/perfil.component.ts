@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { UsuarioService } from '../usuario.service';
+import { AngularFireStorage } from '@angular/fire/storage';
+import { Observable } from 'rxjs';
+import { finalize } from 'rxjs/operators'
 
 @Component({
   selector: 'app-perfil',
@@ -9,26 +12,50 @@ import { UsuarioService } from '../usuario.service';
 })
 export class PerfilComponent implements OnInit {
   formPerfil: FormGroup
-  usuarioPerfil:any[]
+  // +++PARA IMAGEN
+  formImg: FormGroup
+  uploadPercent: Observable<number>;
+  downloadURL: Observable<string>;
+  urlImagen: string
+
+  // para meter la imagen solo
+  fotoPerfilUsuario: string
+
+  usuarioPerfil: any[]
   trayectosUsuario: any[]
-  constructor(private usuarioService: UsuarioService) { }
+  constructor(
+    private usuarioService: UsuarioService,
+    private storage: AngularFireStorage
+  ) {
+    
+    this.formImg = new FormGroup({
+      nombre: new FormControl(''),
+      apellido: new FormControl(''),
+    }, [
+        this.validarImagen.bind(this)
+      ])
+
+
+  }
 
   ngOnInit() {
     this.usuarioService.perfilUser().subscribe(res => {
       this.formPerfil = new FormGroup({
         nombre: new FormControl(res.nombre),
-        apellidos: new FormControl( res.apellidos),
-        mail: new FormControl({ value: res.mail, disabled:true}),
+        apellidos: new FormControl(res.apellidos),
+        mail: new FormControl({ value: res.mail, disabled: true }),
         fecha_nacimiento: new FormControl(res.fecha_nacimiento, [this.fechaValidator]),
         sexo: new FormControl(res.sexo),
-        fotoPerfil: new FormControl(res.fotoPerfil),
+        // fotoPerfil: new FormControl(res.fotoPerfil),
       },
-      //  this.passwordRepeatValidator
+        //  this.passwordRepeatValidator
       )
-      this.trayectosUsuario=res.trayectos
-      this.usuarioPerfil=res
-  })
-// FIN el ngOnInit------------------------------------------------------
+      this.trayectosUsuario = res.trayectos
+      this.usuarioPerfil = res
+      
+      this.fotoPerfilUsuario = `url('${res.fotoPerfil}')`
+    })
+    // FIN el ngOnInit------------------------------------------------------
   }
 
   fechaValidator(control) {
@@ -51,12 +78,64 @@ export class PerfilComponent implements OnInit {
 
 
   manejarFomuPerfil() {
-  //  recibe ls datos del formulario del perfil
+    //  recibe ls datos del formulario del perfil
     this.formPerfil.value.token = JSON.parse(localStorage.getItem('token'))
     this.usuarioService.perfilUpdate(this.formPerfil.value).subscribe(res => {
       console.log(res)
-      
     })
+
+  }
+
+  // ++++++++++++++++++++++++IMAGEN PERFIL FIREBASE
+  validarImagen(group) {
+    if (this.urlImagen) {
+      return null
+    } else {
+      return { imagen: 'la imagen es obligatoria' }
+    }
+  }
+
+
+  onSubmit() {
+    // console.log(this.formImg.value)
+    // this.formImg.value.imagen = this.urlImagen
+    this.usuarioService.updateImagen( this.urlImagen ).subscribe(res=>{
+      console.log(res)
+    })
+  
+  }
+
+  onChangeImage($event) {
+    //recupera el fichero del input
+    const image = $event.target.files[0]
+    // console.log(image)
+
+    //ruta dentro de firebase
+    let imageName = Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
+    //  console.log(imageName)
+    const filePath = `imagenes/${imageName}.jgp`;
+    const fileRef = this.storage.ref(filePath);
+    const task = this.storage.upload(filePath, image);
+
+
+    // observe percentage changes
+    // es un observable uqe se ejecuta cuando cambia el % de subida
+    this.uploadPercent = task.percentageChanges();
+
+    // get notified when the download URL is available
+    //  indica cuando se a terminado de subir la imagen
+    // getdown-->es a url public que luego alamcenaremso en nuestra BBDD
+    task.snapshotChanges().pipe(
+      finalize(() => {
+        this.downloadURL = fileRef.getDownloadURL()
+        this.downloadURL.subscribe(url => {
+          this.urlImagen = url
+          
+        })
+      })
+    )
+
+      .subscribe()
 
   }
 

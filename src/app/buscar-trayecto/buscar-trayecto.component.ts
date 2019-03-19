@@ -3,6 +3,7 @@ import { TrayectoService } from '../trayecto.service';
 import { Trayecto } from '.././models/trayecto.model';
 
 // declare var google;
+declare var $
 
 @Component({
   selector: 'buscar-trayecto',
@@ -15,7 +16,6 @@ export class BuscarTrayectoComponent implements OnInit {
   inputname: string
   origenTrayecto: any
   destinoTrayecto: any
-
   listaTrayectos: any[];
 
   constructor(private serviceTrayecto: TrayectoService) {
@@ -32,14 +32,25 @@ export class BuscarTrayectoComponent implements OnInit {
     }else{
         this.destinoTrayecto=event
     }
-
   }
 
   handlerBuscar(){
     this.serviceTrayecto.filtrarTrayecto(this.origenTrayecto, this.destinoTrayecto).subscribe(res=>{
       this.listaTrayectos = res;
-      // console.log(this.listaTrayectos)
+      this.lanzarMensajeError()
     })
-
   } 
+
+  lanzarMensajeError(){
+    if(this.listaTrayectos.length==0){
+      console.log("No hay trayectos")
+      $('#trayectoModal').modal({
+        show: true
+      })
+    }
+  }
+  cerrarModal(){
+    $('#trayectoModal').modal('hide')
+  }
+  
 }

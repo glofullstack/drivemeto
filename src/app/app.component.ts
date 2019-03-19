@@ -39,8 +39,11 @@ export class AppComponent {
       case "/perfil":
          this.bgImagen="url('../assets/images/perfil.jpg')"
       break
+      case "/trayecto/:id":
+      this.bgImagen="url('../assets/images/trayecto.jpg')"
+       break
       default:
-       this.bgImagen=" url('../assets/images/home.jpg')"
+       this.bgImagen=" url('../assets/images/trayecto.jpg')"
 
     }
 

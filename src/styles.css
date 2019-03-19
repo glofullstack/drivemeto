@@ -1,5 +1,15 @@
 @import url('https://fonts.googleapis.com/css?family=Overpass:300,400,900');
-
+@import url('https://fonts.googleapis.com/css?family=Raleway+Dots|Raleway:400,700');
+/* @font-face {
+    font-family: 'WebSymbolsRegular';
+    src: url('websymbols/websymbols-regular-webfont.eot');
+    src: url('websymbols/websymbols-regular-webfont.eot?#iefix') format('embedded-opentype'),
+        url('websymbols/websymbols-regular-webfont.woff') format('woff'),
+        url('websymbols/websymbols-regular-webfont.ttf') format('truetype'),
+        url('websymbols/websymbols-regular-webfont.svg#WebSymbolsRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+} */
 body{
     font-family: 'Overpass', sans-serif;
 }

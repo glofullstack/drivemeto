@@ -1,25 +1,55 @@
 .mapa {
-  width: 300px;
-  height: 300px;
+  position: absolute;
+  width: 375px;
+  height: 265px;
+  border-radius: 5px;
+  margin:0 auto;
+  top:47px;
+  left:57px;
+  -webkit-box-shadow: inset 2px 2px 7px 1px #000000; 
+box-shadow: inset 2px 2px 7px 1px #000000;
+}
+
+
+.contentmapa{
+  width: 459px;
+  height: 358px;
+  background-image: url('../../assets/images/gps.png');
+  /* background-attachment: fixed; */
+  background-size: contain;
+  background-position: center;
+  border-radius: 27px;
+  -webkit-box-shadow:  2px 2px 7px 1px #000000; 
+  box-shadow:  2px 2px 7px 1px #000000;
+  
 }
 
 .otro{
   color:white;
 }
-.usuario{
-    width: 100px;
-    height: 100px;
+.usuarioclass {
+  width: 100px;
+  height: 100px;
+  overflow: hidden;
+
+  }
+  
+  
+.usuarioclass{
     background-color: rgb(134, 24, 61);
     border: 4px solid white;
     border-radius: 50%;
     float: left;
     text-align: center;
     margin: 1em;
-    padding: 40px 0 10px 0;
-    
+    width: 150px;
+    height: 150px;
+    background-color: red;
+    border-radius: 50%;
+    margin: 0 auto;
 }
 
-.usuario::after{
+.usuarioclass::after{
   clear: both;
 }
 

@@ -2,9 +2,29 @@
   <section class="fondoperfil row">
 
     <header class="col-4 bg-warning">
-      <div class="foto">
-        <img src="../../assets/images/168.jpg" alt="">
+
+
+      <div class="foto" [ngStyle]="{ 'background-image' : fotoPerfilUsuario }" >
+        <!-- <img [src]=" usuarioPerfil?.fotoPerfil " alt=""> -->
+        <!--  -->
+     
+        <!-- <img [src]="downloadURL | async" alt=""> -->
+           
       </div>
+      <p>
+          {{ uploadPercent | async }}
+        </p>
+
+      <form [formGroup]="formImg" (ngSubmit)="onSubmit()">        
+          <!-- <input class="custom-file-input " type="file" (change)="onChangeImage($event)" placeholder=" ">  -->
+          <div class="custom-file">
+              <input type="file" class="custom-file-input" id="image" (change)="onChangeImagen($event)">
+              <label class="custom-file-label" for="inputGroupFile">subir img</label>
+            </div>
+          <input class="btn btn-success " type="submit" value="Subir foto">
+      </form>
+
+
       <div class="info mt-3">
         <h3>{{usuarioPerfil?.nombre | uppercase}}</h3>
       </div>

@@ -20,11 +20,21 @@ header nav ul li a{
     font-weight: 400;
 }
 
+
+.desplegable ul{
+ display: none;
+}
+
+
+.desplegable:hover ul{
+    display: block;
+}
+/* 
 header nav ul li a:hover{
     height: 45px;
     transition: 0.5s;
     color:  #639449;
-}
+} */
 
 
 header .logo, header nav{

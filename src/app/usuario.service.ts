@@ -9,6 +9,7 @@ import { Usuario } from './models/usuario.model'
 export class UsuarioService {
   arrUsuario: Usuario[]
   urlUsuario: string;
+  nombreUser:string;
 
   constructor(private httpClient : HttpClient) {
     this.arrUsuario = []
@@ -57,7 +58,21 @@ export class UsuarioService {
       'mail' : perfiluser.mail ,
       'fecha_nacimiento' : perfiluser.fechaNacimiento,
       'sexo' : perfiluser.sexo,
-      'fotoPerfil' : perfiluser.fotoperfil,
+     
     })
   }
+  
+  updateImagen(urlimg){
+    // 'fotoPerfil' : perfiluser.fotoperfil,
+    return this.httpClient.post<any>(`${this.urlUsuario}/updateimg`, {
+      'fotoPerfil' : urlimg,
+      'token':JSON.parse(localStorage.getItem('token'))
+    })
+  }
+  
+
+
+
+
 }
+

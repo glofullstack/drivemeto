@@ -25,8 +25,11 @@ export class TrayectoComponent implements OnInit {
       this.serviceTrayecto.getTrayectoById(params.idTrayecto).subscribe(res => {
         // INFO DEL TRAYECTO
         this.trayecto = res
-        // INFO DE LOS USUAIROS APUNTADOS AL TRAYECTO
+        this.handlerCreador()
+        
+        // INFO DE LOS USUARIOS APUNTADOS AL TRAYECTO
         this.usuariosTrayecto = this.trayecto.usuarios
+        console.log('info trayecto', this.trayecto)
         this.loadMap()
       })
 
@@ -43,11 +46,7 @@ export class TrayectoComponent implements OnInit {
   directionsDisplay: any
 
   ngOnInit() {
-      // el id del usuario logado
-      this.serviceTrayecto.creadorlogeado(JSON.parse(localStorage.getItem('token'))).subscribe(res => {
-        this.userlogado = res.id
-      })
-  
+     
 
   }
 
@@ -88,8 +87,7 @@ export class TrayectoComponent implements OnInit {
       console.log(res)
     })
   }
-
-
+  
   //BORRAR EL USUARIO LOGEADO DE UN TRAYECTO
   handlerBorrarse(){
     this.serviceTrayecto.borraut(JSON.parse(localStorage.getItem('token')), this.trayecto.id).subscribe(res=>{
@@ -97,10 +95,17 @@ export class TrayectoComponent implements OnInit {
     })
   }
 
+  handlerCreador(){
+     // el id del usuario logado
+     this.serviceTrayecto.creadorlogeado(JSON.parse(localStorage.getItem('token'))).subscribe(res => {
+      this.userlogado = res.id
+    })
+  }
 
-  //COMPARA SI EL CREADOR DEL TRYAECTO ES EL USUARIO LOGADO
-  creadorlogado() {
-    return ((this.trayecto.fkUsuario == this.userlogado) ? true : false);
+
+  //COMPARA SI EL CREADOR DEL TRAYECTO ES EL USUARIO LOGADO
+  creador() {
+    return (this.trayecto.fkUsuario == this.userlogado) ? true : false;
   }
 
   // UN USUARIO NO PUEDE APUNTARSE DOS VECES A UN TRAYECTO

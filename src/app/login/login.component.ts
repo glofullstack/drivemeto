@@ -27,8 +27,7 @@ export class LoginComponent implements OnInit {
       if(res['error']){
         return this.error=true
       }
-                    
-
+                  
       localStorage.setItem('token', JSON.stringify(res['token']));
       this.loginDone.emit(JSON.stringify(res['token']))
     

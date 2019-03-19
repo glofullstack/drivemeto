@@ -15,7 +15,7 @@ export class CabeceraComponent implements OnInit {
 
   ngOnInit() {
     this.serviceUsuario.perfilUser().subscribe(res=>{
-     this.userName= res.nombre
+     this.userName = res.nombre
     })
   }
 

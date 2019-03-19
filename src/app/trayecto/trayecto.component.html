@@ -1,25 +1,36 @@
 <div class="otro container">
   <div class="row">
-    <div class="col-6">
+    <div class="col-6" *ngIf="trayecto">
       <h3>Info Trayecto</h3>
-      <p><strong>Origen:</strong> {{trayecto?.origenTrayecto}}</p>
-      <p><strong>Destino:</strong> {{trayecto?.destinoTrayecto}}</p>
+      <p><strong>Origen:</strong> {{trayecto?.origenTrayecto | espana}}</p>
+      <p><strong>Destino:</strong> {{trayecto?.destinoTrayecto | espana }}</p>
       <p><strong>Fecha:</strong> {{trayecto?.fechaTrayecto | date: shortDate}}</p>
-      <p><strong>Hora:</strong> {{trayecto?.horaTrayecto}}:{{trayecto?.minutosTrayecto}} </p>
+      <p><strong>Hora:</strong> {{trayecto?.horaTrayecto}} : {{trayecto?.minutosTrayecto}} </p>
       <p><strong>Tipo de trayecto: </strong> {{ trayecto?.tipoTrayecto }}</p>
       <p><strong>Creador: </strong> {{ trayecto?.nombre }} | contacto creador: {{trayecto?.mail}}</p>
 
-      <div  >
+
+      <div>
+
         <p><strong>Usuarios Apuntados: </strong></p>
-        <div *ngFor="let usuario of usuariosTrayecto" class="usuario">
-          <div> {{ usuario?.nombre | uppercase }} </div>
+        <div *ngFor="let usuario of usuariosTrayecto">
+          <div class="usuarioclass">
+            <div [ngStyle]="{
+            'background-image': 'url('+usuario?.fotoperfil+') ',
+            'width': '200px', 
+            'height': '200px',  
+            'background-position': 'center',
+            'background-size': 'cover'}"></div>
+          </div>
+          <p> {{ usuario?.nombre | uppercase }} </p>
         </div>
 
-        <div class="join" *ngIf="!creadorlogado() && !usuarioApuntado()" (click)="handlerJoin()"  [routerLink]="['/perfil']"> 
+        <div class="join" *ngIf="trayecto && !creador() && !usuarioApuntado()" (click)="handlerJoin()" [routerLink]="['/perfil']">
           <p>¡Me apunto!</p>
         </div>
 
-        <div class="meborro" *ngIf="!creadorlogado() && usuarioApuntado()" (click)="handlerBorrarse()"  [routerLink]="['/perfil']"> 
+        <div class="meborro" *ngIf="trayecto && !creador() && usuarioApuntado()" (click)="handlerBorrarse()"
+          [routerLink]="['/perfil']">
           <p>¡Me borro!</p>
         </div>
 
@@ -27,8 +38,12 @@
 
 
     </div>
-    <div class="col-6">
-      <div #googleMap class="mapa"> </div>
+    <div class=" col-6">
+      <div class="contentmapa">
+        <!-- <img src="../../assets/images/gps.png" alt=""> -->
+        <div #googleMap class="mapa"> </div>
+      </div>
+     
     </div>
   </div>
   <!-- <button class="btn btn-warning" (click)="handlerJoin()" [routerLink]="['/perfil']"> Me apunto! </button> -->

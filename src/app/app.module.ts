@@ -10,6 +10,10 @@ import { RegisterComponent } from './register/register.component';
 import { CabeceraComponent } from './cabecera/cabecera.component';
 import { PieComponent } from './pie/pie.component';
 import { HomeComponent } from './home/home.component';
+import {AngularFireModule} from '@angular/fire';
+import {AngularFireStorageModule} from '@angular/fire/storage';
+import { environment } from 'src/environments/environment';
+
 
 import { BuscarTrayectoComponent } from './buscar-trayecto/buscar-trayecto.component';
 import { PublicarTrayectoComponent } from './publicar-trayecto/publicar-trayecto.component';
@@ -63,6 +67,8 @@ import { EspanaPipe } from './espana.pipe';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireStorageModule
 
   ],
   providers: [],

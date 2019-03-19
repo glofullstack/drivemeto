@@ -1,13 +1,40 @@
-<div class="home">
-      <div class="container-fluid">
-            <div class="row justify-content-center aling-items-center">
-                  <div class="ch-item">
-                        <div class="ch-info" [routerLink]="['/publicar']"> ¿TE LLEVO?</div>
-                  </div>
-                  <div class="ch-item">
-                        <div class="ch-info" [routerLink]="['/search']">¿ALQUIEN ME LLEVA?</div>
-                  </div>
-            </div>
-      </div>
-</div>
+<div class="home container">
+  <div class="row">
+    <div class="info col-7">
+      <p>Bienvenido a </p>
+      <h1 class="logo"> Drivemeto </h1>
 
+      <p> Aquí podrás encontrar compañeros para compartir coche en tus trayectos habituales o aquellos que realices
+        espontáneamente.</p>
+      <p><strong>Si eres conductor,</strong> te evitarás esos molestos atascos, pudiendo usar el carril bus y además
+        contribuirás a la reducción de la contaminación <i class="fas fa-seedling"></i>.</p>
+      <p><strong>Si eres peatón, </strong>te recogerán cerquita de casa, en un horario más adaptado a ti. Sin
+        aglomeraciones, calentito en invierno, y ganando mucho tiempo en esperas y transbordos eternos <i class="fas fa-train"></i>.</p>
+
+
+    </div>
+    <div class="botones ontent col-5">
+      <!-- botones redondos -->
+      <ul class="ca-menu">
+        <li>
+          <a [routerLink]="['/publicar']">
+            <span class="ca-icon"><i class="fas fa-road"></i></span>
+            <div class="ca-content">
+              <h2 class="ca-main">!TE LLEVO!</h2>
+              <h3 class="ca-sub">Publica un trayecto</h3>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a [routerLink]="['/search']">
+            <span class="ca-icon"><i class="fas fa-street-view"></i></span>
+            <div class="ca-content">
+              <h2 class="ca-main">¿ALQUIEN ME LLEVA?</h2>
+              <h3 class="ca-sub">Busca un trayecto</h3>
+            </div>
+          </a>
+        </li>
+      </ul>
+    </div><!-- botones redondos -->
+  </div>
+</div>
