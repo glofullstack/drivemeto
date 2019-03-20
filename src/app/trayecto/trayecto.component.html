@@ -1,6 +1,9 @@
 <div class="otro container">
   <div class="row">
-    <div class="col-6" *ngIf="trayecto">
+
+
+    <!-- <div class="col-6" *ngIf="trayecto">
+
       <h3>Info Trayecto</h3>
       <p><strong>Origen:</strong> {{trayecto?.origenTrayecto | espana}}</p>
       <p><strong>Destino:</strong> {{trayecto?.destinoTrayecto | espana }}</p>
@@ -10,9 +13,8 @@
       <p><strong>Creador: </strong> {{ trayecto?.nombre }} | contacto creador: {{trayecto?.mail}}</p>
 
 
-      <div>
-
-        <p><strong>Usuarios Apuntados: </strong></p>
+ <div>
+ <p><strong>Usuarios Apuntados: </strong></p>
         <div *ngFor="let usuario of usuariosTrayecto">
           <div class="usuarioclass">
             <div [ngStyle]="{
@@ -37,14 +39,103 @@
       </div>
 
 
-    </div>
-    <div class=" col-6">
+    </div> -->
+   
+    <div class="infotrayecto col-7" *ngIf="trayecto">
+        <div class="lista">
+          <div class="detalles">
+            <div class="icono">
+              <i class="fas fa-map-marker"></i>
+            </div>
+            <div class="info">
+              <h4>Origen </h4>
+              <p>{{trayecto?.origenTrayecto | espana}}</p>
+            </div>
+    
+            <div class="icono">
+              <i class="fas fa-map-marker-alt"></i>
+            </div>
+            <div class="info">
+              <h4>Destino </h4>
+              <p>{{trayecto?.destinoTrayecto | espana }}</p>
+            </div>
+    
+            <div class="clear"></div>
+    
+            <div class="icono">
+              <i class="far fa-calendar-alt"></i>
+            </div>
+            <div class="info">
+              <h4>Fecha </h4>
+              <p>{{trayecto?.fechaTrayecto | date: shortDate}} | {{trayecto?.horaTrayecto}}:{{trayecto?.minutosTrayecto}} h</p>
+            </div>
+    
+            <div class="icono">
+              <i class="fas fa-car"></i>
+            </div>
+            <div class="info">
+              <h4>Tipo de traeycto </h4>
+              <p>{{ trayecto?.tipoTrayecto | uppercase }}</p>
+            </div>
+    
+            <div class="clear"></div>
+    
+            <div class="icono">
+              <i class="far fa-id-badge"></i>
+            </div>
+            <div class="info">
+              <h4>Creador del trayecto </h4>
+              <p> {{ trayecto?.nombre }} | {{trayecto?.mail}} </p>
+            </div>
+            <div class="clear"></div>
+          </div>
+    
+          <div class="apuntados">
+            <p>USUARIOS APUNTADOS</p>
+            <div class="usuariosclass">
+
+              <div  *ngFor="let usuario of usuariosTrayecto">
+                <div class="usuariobola">
+                  <div [ngStyle]="{
+                        'background-image': 'url('+usuario?.fotoperfil+') ',
+                        'width': '120px', 
+                        'height': '120px',  
+                        'background-position': 'center',
+                        'background-size': 'cover',
+                      'border-radius': '50%',
+                      'border': 'white solid 4px'}">
+                  </div>
+                  <p> {{ usuario?.nombre | uppercase }} </p>
+                </div>
+                <div class="clear"></div>
+              </div>
+            </div>
+    
+            <div class="botonestrayecto">
+    
+              <div class="join btn btn-success" *ngIf="trayecto && !creador() && !usuarioApuntado()" (click)="handlerJoin()" [routerLink]="['/perfil']">
+                ¡Me apunto! <i class="far fa-hand-point-up"></i>
+              </div>
+    
+              <div class="meborro btn btn-warning" *ngIf="trayecto && !creador() && usuarioApuntado()" (click)="handlerBorrarse()" [routerLink]="['/perfil']">
+                ¡Me borro! <i class="far fa-grin-beam-sweat"></i>
+              </div>
+    
+            </div>
+    
+          </div>
+    
+        </div>
+      </div>
+    <!-- ++++++++++++++++++++++++++++++++++++++++++++++MAPA+++++++++++++++++++++++++++++ -->
+    <div class=" col-5">
       <div class="contentmapa">
         <!-- <img src="../../assets/images/gps.png" alt=""> -->
         <div #googleMap class="mapa"> </div>
       </div>
-     
     </div>
+    <!-- ++++++++++++++++++++++++++++++++++++++++++++++ FIN MAPA +++++++++++++++++++++++++++++ -->
+
   </div>
   <!-- <button class="btn btn-warning" (click)="handlerJoin()" [routerLink]="['/perfil']"> Me apunto! </button> -->
 </div>

@@ -5,16 +5,17 @@ header{
 }
 
 header nav ul li{
-    /* margin: 0 auto; */
+    margin: 0 auto;
     display: inline-block;
-    background: rgba(255, 255, 255, 0.8);
+    background: rgba(255, 255, 255, 0.3);
+   
 }
 
 header nav ul li a{
 	display: block;
 	padding: 10px 20px 0px 20px;
     /* text-align: center; */
-    color: #245043;    
+    color: rgba(17, 47, 65);    
     height: 40px;
     text-transform:uppercase;
     font-weight: 400;
@@ -30,11 +31,11 @@ header nav ul li a{
     display: block;
 }
 /* 
-header nav ul li a:hover{
+/* header nav ul li a:hover{
     height: 45px;
     transition: 0.5s;
-    color:  #639449;
-} */
+    color:  #639449;    
+} */ */
 
 
 header .logo, header nav{

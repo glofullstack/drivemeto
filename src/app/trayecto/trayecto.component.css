@@ -7,7 +7,7 @@
   top:47px;
   left:57px;
   -webkit-box-shadow: inset 2px 2px 7px 1px #000000; 
-box-shadow: inset 2px 2px 7px 1px #000000;
+ box-shadow: inset 2px 2px 7px 1px #000000;
 }
 
 
@@ -19,11 +19,11 @@ box-shadow: inset 2px 2px 7px 1px #000000;
   background-size: contain;
   background-position: center;
   border-radius: 27px;
-  -webkit-box-shadow:  2px 2px 7px 1px #000000; 
-  box-shadow:  2px 2px 7px 1px #000000;
+  -webkit-box-shadow: 5px 5px 3px -1px #000000; 
+box-shadow: 5px 5px 3px -1px #000000;
   
 }
-
+/* 
 .otro{
   color:white;
 }
@@ -78,5 +78,87 @@ box-shadow: inset 2px 2px 7px 1px #000000;
   font-weight: 900;
   font-size: 20px;
   padding: 10px 0 5px 0;
+  cursor: pointer;
+} */
+
+/* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++  nuevo */
+.infotrayecto{
+  width: 600px;
+  height: 100vh;
+  background-color: rgba(17, 47, 65, 0.7);
+  color: aliceblue;
+  margin: 0 auto;
+  padding: 20px 20px 5px 20px;
+}
+.lista{
+  margin: 0 auto;
+  border: 3px solid white;
+  padding:2em 0.5em;
+}
+.icono{
+  float: left;
+ margin-top:-10px;
+ margin-right: 10px;
+ margin-left: 20px;
+  font-size: 3em;
+}
+.info{
+  float: left;
+ margin-right: 25px;
+ line-height: 0.2em;
+}
+.info::after{
+  clear: both;
+}
+.clear{
+  clear: both;
+}
+.fa-map-marker{
+  color:#F2B134;
+}
+.fa-map-marker-alt{
+  color:#47AB6C;
+}
+.fa-calendar-alt{
+  color:#ED553B;
+}
+.fa-car{
+  color:#0894A1;
+}
+.fa-id-badge{
+  color:#9E033D;
+}
+
+/* usuarios apuntados */
+.apuntados{
+  margin: 0 auto;
+  text-align: center;
+}
+
+.apuntados  p{
+  text-align: center;
+  margin: 0em auto;
+  background-color: #fff;
+  color: rgba(17, 47, 65);
+  padding: 4px 0 1px 0;
+  font-weight: 500;
+  width: 90%;
+  display: block;
+}
+
+.usuariosclass{
+  margin: 1em auto;
+}
+.usuariobola{
+  /* width: 120px;
+  height: 120px;
+  background-color: #47AB6C;
+  border: white solid 4px; */
+  /* border-radius: 50%; */
+  float: left;
+  margin-right: 14px;
+}
+
+.botonestrayecto {
   cursor: pointer;
 }

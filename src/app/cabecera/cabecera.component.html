@@ -16,25 +16,30 @@
 
       <!-- MENU DESPLEGABLES -->
 
-      <li class="desplegable">
+      <!-- <li class="desplegable">
         <a *ngIf="serviceUsuario.isUserLogged()" [routerLink]="['/perfil']"> ¡Hola {{ userName }}!</a>
         <ul>
           <li>
             <a [routerLink]="['/perfil']" *ngIf="serviceUsuario.isUserLogged()">Mi Perfil</a>
           </li>
           <li>
-            <a *ngIf="serviceUsuario.isUserLogged()" (click)="logOut()" [routerLink]="['/home']">LogOut</a>
+            <a *ngIf="serviceUsuario.isUserLogged()" (click)="logOut()" [routerLink]="['/home']">LogOut <i class="fas fa-sign-out-alt"></i></a>
           </li>
         </ul>
-      </li>
+      </li> -->
+         <!-- FIN MENU DESPLEGABLE -->
 
-      <!-- <li>
+
+      <li>
+          <a *ngIf="serviceUsuario.isUserLogged()" [routerLink]="['/perfil']"> ¡Hola {{ userName }}!</a>
+      </li>
+      <li>
         <a [routerLink]="['/perfil']" *ngIf="serviceUsuario.isUserLogged()">Mi Perfil</a>
       </li>
 
       <li class="rigth">
-        <a *ngIf="serviceUsuario.isUserLogged()" (click)="logOut()" [routerLink]="['/home']">LogOut</a>
-      </li> -->
+        <a *ngIf="serviceUsuario.isUserLogged()" (click)="logOut()" [routerLink]="['/home']">LogOut <i class="fas fa-sign-out-alt"></i></a>
+      </li>
 
     </ul>
   </nav>
