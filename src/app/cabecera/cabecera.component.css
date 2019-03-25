@@ -1,27 +1,31 @@
 
 header{
     height: 40px;   
-    margin-bottom: 3em;
+    margin-bottom: 2em;
 }
 
 header nav ul li{
     margin: 0 auto;
     display: inline-block;
-    background: rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.7);
    
 }
 
 header nav ul li a{
+    font-family: 'Raleway', sans-serif;
 	display: block;
 	padding: 10px 20px 0px 20px;
     /* text-align: center; */
     color: rgba(17, 47, 65);    
     height: 40px;
     text-transform:uppercase;
-    font-weight: 400;
+    font-weight: bold;
 }
 
+header nav ul li a:active   {
+    color: rgb(6, 101, 129);
 
+}
 .desplegable ul{
  display: none;
 }
@@ -30,12 +34,12 @@ header nav ul li a{
 .desplegable:hover ul{
     display: block;
 }
-/* 
-/* header nav ul li a:hover{
+
+header nav ul li a:hover{
     height: 45px;
     transition: 0.5s;
-    color:  #639449;    
-} */ */
+    font-weight: 400;   
+}
 
 
 header .logo, header nav{

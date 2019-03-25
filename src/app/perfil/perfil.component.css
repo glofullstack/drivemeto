@@ -19,9 +19,6 @@
 }
 
 .fondoperfil header{
-    /* height: 100%; */
-    /* max-width: 500px;
-    width: 30%; */
     padding: 20px;
     text-align: center;
     border-top-left-radius: 10px;
@@ -31,7 +28,7 @@
 .foto {
    width: 150px;
    height: 150px;
-   background-color: red;
+   background-color:rgba(17, 47, 65);
    border-radius: 50%;
    margin: 0 auto;
    background-position: center;

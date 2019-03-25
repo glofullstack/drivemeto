@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+declare var $
 
 @Component({
   selector: 'pie',
@@ -11,5 +12,15 @@ export class PieComponent implements OnInit {
 
   ngOnInit() {
   }
+
+//  pieWorks(){
+//   $('.contenedor').hover(
+//       $(this).find('.info').stop(true, true).animate({ 'left': '0px' }),
+//       $(this).find('.info').stop(true, true).animate({ 'left': '400px' })
+//     )
+// }
+
+
+
 
 }

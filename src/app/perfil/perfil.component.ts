@@ -1,9 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { UsuarioService } from '../usuario.service';
 import { AngularFireStorage } from '@angular/fire/storage';
 import { Observable } from 'rxjs';
 import { finalize } from 'rxjs/operators'
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-perfil',
@@ -25,7 +26,9 @@ export class PerfilComponent implements OnInit {
   trayectosUsuario: any[]
   constructor(
     private usuarioService: UsuarioService,
-    private storage: AngularFireStorage
+    private storage: AngularFireStorage,
+    private changeRef: ChangeDetectorRef,
+    private router: Router,
   ) {
     
     this.formImg = new FormGroup({
@@ -101,6 +104,8 @@ export class PerfilComponent implements OnInit {
     // this.formImg.value.imagen = this.urlImagen
     this.usuarioService.updateImagen( this.urlImagen ).subscribe(res=>{
       console.log(res)
+      // this.router.navigate(['/perfil'])
+
     })
   
   }
@@ -108,12 +113,12 @@ export class PerfilComponent implements OnInit {
   onChangeImage($event) {
     //recupera el fichero del input
     const image = $event.target.files[0]
-    // console.log(image)
+    console.log(image)
 
     //ruta dentro de firebase
     let imageName = Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
     //  console.log(imageName)
-    const filePath = `imagenes/${imageName}.jgp`;
+    const filePath = `imagenes/${imageName}.jpg`;
     const fileRef = this.storage.ref(filePath);
     const task = this.storage.upload(filePath, image);
 
@@ -125,17 +130,18 @@ export class PerfilComponent implements OnInit {
     // get notified when the download URL is available
     //  indica cuando se a terminado de subir la imagen
     // getdown-->es a url public que luego alamcenaremso en nuestra BBDD
+    let self = this
     task.snapshotChanges().pipe(
       finalize(() => {
         this.downloadURL = fileRef.getDownloadURL()
         this.downloadURL.subscribe(url => {
-          this.urlImagen = url
-          
+          self.urlImagen = url
+          self.fotoPerfilUsuario = url
+          console.log(self.fotoPerfilUsuario)
+          self.changeRef.detectChanges()
         })
       })
-    )
-
-      .subscribe()
+    ).subscribe()
 
   }
 

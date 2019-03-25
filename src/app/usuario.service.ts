@@ -14,6 +14,12 @@ export class UsuarioService {
   constructor(private httpClient : HttpClient) {
     this.arrUsuario = []
     this.urlUsuario = 'http://localhost:3000/api/usuarios'
+
+    if(localStorage.getItem('token')){
+      this.perfilUser().subscribe((res)=>{
+        this.nombreUser = res['nombre']
+      })
+    }
    }
 
   // /recoge los valores introducidos en el formulario de resgitro nuevo usuario a traves del manejador y desde aqui los manda por peticion POST a la base de datos 

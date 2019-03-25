@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { TrayectoService } from '../trayecto.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'publicar-trayecto',
@@ -9,7 +10,7 @@ import { TrayectoService } from '../trayecto.service';
 })
 export class PublicarTrayectoComponent implements OnInit {
   // formTrayecto: FormGroup;
-  constructor(private servicioTrayecto: TrayectoService) { }
+  constructor(private servicioTrayecto: TrayectoService, private router: Router) { }
 
   ngOnInit() {
     // this.formTrayecto = new FormGroup({

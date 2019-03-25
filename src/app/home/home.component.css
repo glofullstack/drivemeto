@@ -1,10 +1,11 @@
 .info{
-    color: #fff;
+    color:white;
     font-weight:300;
     font-size: 1.2em;
     font-family: 'Raleway', sans-serif;
     border: #fff solid 3px;
     padding: 20px 10px 10px 20px;
+    background-color:  rgba(255, 255, 255, 0.1);
  }
 .fa-seedling{
     color: rgb(63, 221, 63);
@@ -12,9 +13,14 @@
 .fa-train{
     color: rgb(39, 216, 223);
 }
+.fa-dollar-sign{
+    color: rgb(229, 233, 19);
+ 
+}
 .logo{
     font-family: 'Raleway Dots', cursive;
-    font-size: 3em;
+    font-size: 3.5em;
+    margin-top:-10px;
 }
 
 .botones{

@@ -25,6 +25,7 @@ export class TrayectoComponent implements OnInit {
       this.serviceTrayecto.getTrayectoById(params.idTrayecto).subscribe(res => {
         // INFO DEL TRAYECTO
         this.trayecto = res
+        
         this.handlerCreador()
         
         // INFO DE LOS USUARIOS APUNTADOS AL TRAYECTO

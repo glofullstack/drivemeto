@@ -2,15 +2,15 @@
   <div class="formularionew">
     <h2>¡Te llevo!</h2>
     <form novalidate [formGroup]="formTrayecto" (ngSubmit)="manejarFomuTrayecto()">
-
+<!-- TODO:HE QUIETADO TRAYECTO DEL INPUTNAME DE ORIGEN Y DESTINO -->
       <div class="newinput input-group">
-        <places (recuperarPlace)="getPlace($event)" inputname="origenTrayecto"></places>
+        <places (recuperarPlace)="getPlace($event)" inputname="origen"></places>
         <small *ngIf="formTrayecto.controls['origenTrayecto'].errors?.required && formTrayecto.controls['origenTrayecto'].dirty"
           class="form-text text-danger">Este campo es obligatorio</small>
       </div>
 
       <div class="newinput input-group">
-        <places (recuperarPlace)="getPlace($event)" inputname="destinoTrayecto"></places>
+        <places (recuperarPlace)="getPlace($event)" inputname="destino"></places>
         <small *ngIf="formTrayecto.controls['destinoTrayecto'].errors?.required && formTrayecto.controls['destinoTrayecto'].dirty"
           class="form-text text-danger">Este campo es obligatorio</small>
       </div>

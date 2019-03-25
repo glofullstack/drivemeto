@@ -65,11 +65,13 @@
   outline: 0;
 }
 
+
+
 #trayectoModal .btn{
   background: linear-gradient(90deg, rgba(155, 226, 103, 1) 0%, rgba(110, 205, 143, 1) 100%);
 }
 .modal-body{
-  background-image: url('../../assets/images/1750.jpg');
+  background-image: url('../../assets/images/1750.png');
   background-attachment: fixed;
   background-size: cover;
   background-position: bottom;

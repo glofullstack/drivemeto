@@ -1,5 +1,6 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { UsuarioService } from '../usuario.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'login',
@@ -12,7 +13,7 @@ export class LoginComponent implements OnInit {
 
   error:boolean
 
-  constructor(private serviceUsuario : UsuarioService) {
+  constructor(private serviceUsuario : UsuarioService, private router: Router) {
     this.error=false
    }
 
@@ -29,8 +30,13 @@ export class LoginComponent implements OnInit {
       }
                   
       localStorage.setItem('token', JSON.stringify(res['token']));
-      this.loginDone.emit(JSON.stringify(res['token']))
-    
+
+      this.serviceUsuario.perfilUser().subscribe((userProfile)=>{
+        this.serviceUsuario.nombreUser = userProfile.nombre
+        this.loginDone.emit(JSON.stringify(res['token']))
+        this.router.navigate(['/perfil'])
+      })
+      
     })
     formValue.reset()
   }

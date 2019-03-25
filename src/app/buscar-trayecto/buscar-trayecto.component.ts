@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { TrayectoService } from '../trayecto.service';
 import { Trayecto } from '.././models/trayecto.model';
+import { Router } from '@angular/router';
 
 // declare var google;
 declare var $
@@ -18,7 +19,8 @@ export class BuscarTrayectoComponent implements OnInit {
   destinoTrayecto: any
   listaTrayectos: any[];
 
-  constructor(private serviceTrayecto: TrayectoService) {
+  constructor(private serviceTrayecto: TrayectoService,
+    private router: Router) {
       this.listaTrayectos=[]
    }
 
@@ -27,7 +29,7 @@ export class BuscarTrayectoComponent implements OnInit {
   }
  
   getPlace(event){
-    if(event.inputname=="origenTrayecto"){
+    if(event.inputname=="origen"){
         this.origenTrayecto=event
     }else{
         this.destinoTrayecto=event

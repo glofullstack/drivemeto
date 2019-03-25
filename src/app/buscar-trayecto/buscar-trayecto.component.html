@@ -1,7 +1,7 @@
 <section class="buscar container col-6">
   <h2 class="text">¿Alguien me lleva?</h2>
-  <places (recuperarPlace)="getPlace($event)" inputname="origenTrayecto"></places>
-  <places (recuperarPlace)="getPlace($event)" inputname="destinoTrayecto"></places>
+  <places (recuperarPlace)="getPlace($event)" inputname="origen"></places>
+  <places (recuperarPlace)="getPlace($event)" inputname="destino"></places>
   <button class="btn" (click)="handlerBuscar()">Buscar Trayecto</button>
   <div>
     <lista-trayecto [trayectos]="listaTrayectos"></lista-trayecto>
@@ -24,7 +24,7 @@
           <p>NO HAY NINGUN TRAYECTO CERCANO</p>
 
           <button class="botonmodal btn btn-warning col-5" [routerLink]="['/publicar']" (click)="cerrarModal()">Publicalo tu mismo</button>
-          <button class="botonmodal btn btn-success col-5" [routerLink]="['/buscar']">Buscar de Nuevo</button>
+          <button class="botonmodal btn btn-success col-5" [routerLink]="['/buscar']" (click)="cerrarModal()">Buscar de Nuevo</button>
         </div>
 
 

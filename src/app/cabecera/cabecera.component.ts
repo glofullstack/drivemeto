@@ -14,9 +14,9 @@ export class CabeceraComponent implements OnInit {
   constructor(public serviceUsuario: UsuarioService) { }
 
   ngOnInit() {
-    this.serviceUsuario.perfilUser().subscribe(res=>{
-     this.userName = res.nombre
-    })
+    // this.serviceUsuario.perfilUser().subscribe(res=>{
+    //  this.userName = res.nombre
+    // })
   }
 
   getTokenLogin($event){

@@ -5,6 +5,7 @@ import { TrayectoService } from '../trayecto.service';
 import { areAllEquivalent } from '@angular/compiler/src/output/output_ast';
 
 import { formControlBinding } from '@angular/forms/src/directives/ng_model';
+import { Router } from '@angular/router';
 
 declare var google;
 
@@ -23,8 +24,11 @@ export class NewTrayectoComponent implements OnInit {
   origenTrayecto: any
   destinoTrayecto: any
 
-
-  constructor(private serviceTrayecto: TrayectoService) {
+  idTrayectoCreado: any
+  constructor(
+    private serviceTrayecto: TrayectoService,
+    private router: Router
+    ) {
     this.fechaActual = new Date();
    }
 
@@ -49,9 +53,9 @@ export class NewTrayectoComponent implements OnInit {
   }
 
 
-
+// TODO: HE QUITADO TRAYECTO
   getPlace(event){
-    if(event.inputname=="origenTrayecto"){
+    if(event.inputname=="origen"){
         this.origenTrayecto=event
     }else{
         this.destinoTrayecto=event
@@ -85,7 +89,12 @@ export class NewTrayectoComponent implements OnInit {
   // console.log(this.formTrayecto.value)
 // pasamos todos los datos del formulario con los extraidos del getplaces al servicio
   this.serviceTrayecto.newTrayecto(this.formTrayecto.value).subscribe(res=>{
-       console.log(res)
+     console.log(res)  
+    //  this.router.navigate(['/buscar'])
+
    })
+  //  console.log(this.idTrayectoCreado)
+  //  this.router.navigate([`/trayecto/${this.idTrayectoCreado}`])
   }
+
 }

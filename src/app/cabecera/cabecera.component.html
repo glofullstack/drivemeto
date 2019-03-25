@@ -1,7 +1,10 @@
 <header class="container">
   <nav>
     <ul>
-      <li class="left">
+        <li class="left">
+            <a [routerLink]="['/home']"><i class="fas fa-car"></i></a>
+          </li>
+      <li>
         <a [routerLink]="['/publicar']">Publica tu Trayecto</a>
       </li>
       <li>
@@ -31,7 +34,7 @@
 
 
       <li>
-          <a *ngIf="serviceUsuario.isUserLogged()" [routerLink]="['/perfil']"> ¡Hola {{ userName }}!</a>
+          <a *ngIf="serviceUsuario.isUserLogged()" [routerLink]="['/perfil']"> ¡Hola {{ serviceUsuario.nombreUser }}!</a>
       </li>
       <li>
         <a [routerLink]="['/perfil']" *ngIf="serviceUsuario.isUserLogged()">Mi Perfil</a>
