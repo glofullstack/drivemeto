@@ -1,0 +1,32 @@
+<div class="card"  [routerLink]="['/trayecto', trayecto.id]">
+  <div class="imgcard">
+    <img src="../../assets/images/city.png" class="card-img-top" alt="...">
+  </div>
+  <div class="card-body">
+    <p class="card-text ori"><strong>De:</strong> {{trayecto.origenTrayecto | espana}}</p>
+    <p class="card-text des"><strong>A:</strong> {{trayecto.destinoTrayecto | espana}}</p>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-5 hora">{{trayecto.horaTrayecto}} : {{trayecto.minutosTrayecto}} </div>
+      <div class="col-7 hora">{{trayecto.fechaTrayecto | date: shortDate}}</div>
+    </div>
+  </div>
+  <div class="card-text tipo">{{trayecto.tipoTrayecto}}</div>
+</div>
+
+<!-- {{trayecto.origenTrayecto}} -->
+<!-- destinoTrayecto: "Calle Gran Vía, Madrid, España"
+fechaCreacion: null
+fechaLimite: null
+fechaTrayecto: "2019-03-13T23:00:00.000Z"
+fkUsuario: 24
+horaTrayecto: 20
+id: 1
+latitudDestino: "40.42027340000001"
+latitudOrigen: "40.4908153"
+longitudDestino: "-3.7052404999999453"
+longitudOrigen: "-3.8733193000000483"
+minutosTrayecto: 50
+origenTrayecto: "Calle Cruces, 28231 Las Rozas, Madrid, España"
+tipoTrayecto: "espontaneo" -->

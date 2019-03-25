@@ -1,0 +1,100 @@
+<div class="perfil container">
+  <section class="fondoperfil row">
+
+    <header class="col-4 bg-warning">
+
+
+      <div class="foto" [ngStyle]="{ 'background-image' : fotoPerfilUsuario }">
+
+
+      </div>
+      <p>
+        {{ uploadPercent | async }}
+      </p>
+
+      <form [formGroup]="formImg" (ngSubmit)="onSubmit()">
+        <div class="custom-file">
+          <input type="file" class="custom-file-input" id="image" (change)="onChangeImage($event)">
+          <label class="custom-file-label" for="inputGroupFile">Selecciona una foto de perfil</label>
+        </div>
+        <input class="btn btn-success " type="submit" value="Guardar foto">
+      </form>
+
+
+      <div class="info mt-3">
+        <h3>{{usuarioPerfil?.nombre | uppercase}}</h3>
+      </div>
+      <div class="mistrayectos">
+        <p>Mis Trayectos</p>
+        <mis-trayectos [mistrayectos]="trayectosUsuario"></mis-trayectos>
+      </div>
+    </header>
+
+    <!-- ++++++++++++++++++++++++++++++   FRORMU  ++++++++++++++++++++++++++++++++++++++++++ -->
+
+    <div class="formularioperfil col-8 justify-content-center">
+      <form novalidate [formGroup]="formPerfil" (ngSubmit)="manejarFomuPerfil()" class="form-horizontal"
+        *ngIf="formPerfil">
+
+        <div class="form-group">
+          <label class="col-lg-3 control-label">Nombre</label>
+          <div class="col-lg-8">
+            <input class="form-control" type="text" formControlName="nombre" name="nombre">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="col-lg-3 control-label">Apellido</label>
+          <div class="col-lg-8">
+            <input class="form-control" type="text" formControlName="apellidos" name="apellidos">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="col-lg-3 control-label">Sexo:</label>
+          <div class="col-lg-8">
+            <select class="form-control" type="text" formControlName="sexo" name="sexo">
+              <option value="F">Femenino</option>
+              <option value="M">Masculino</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="col-lg-3 control-label">Email:</label>
+          <div class="col-lg-8">
+            <input class="form-control" type="text" formControlName="mail" name="mail">
+            <small *ngIf="formPerfil.controls['mail'].errors?.pattern && formPerfil.controls['mail'].dirty"
+              class="form-text text-danger">
+              El formato de Email no es correcto.
+            </small>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="col-lg-3 control-label">Año de nacimiento:</label>
+          <div class="col-lg-8">
+            <input class="form-control" type="text" placeholder="Eres mayor de 18?" formControlName="fecha_nacimiento"
+              name="fecha_nacimiento">
+            <small
+              *ngIf="formPerfil.controls['fecha_nacimiento'].errors?.fecha_nacimiento && formPerfil.controls['fecha_nacimiento'].dirty">
+              error fecha nacimiento {{formPerfil.controls['fecha_nacimiento'].errors?.fecha_nacimiento }}
+            </small>
+          </div>
+        </div>
+
+
+
+        <button type="submit" class="btn btn-success mb-3 " [disabled]="formPerfil.invalid"
+          [ngClass]="{ 'button-disabled ': formPerfil.invalid} ">Realizar
+          cambios</button>
+
+
+
+      </form>
+    </div>
+
+  </section>
+
+
+</div>

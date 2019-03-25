@@ -1,0 +1,34 @@
+<section class="buscar container col-6">
+  <h2 class="text">¿Alguien me lleva?</h2>
+  <places (recuperarPlace)="getPlace($event)" inputname="origen"></places>
+  <places (recuperarPlace)="getPlace($event)" inputname="destino"></places>
+  <button class="btn" (click)="handlerBuscar()">Buscar Trayecto</button>
+  <div>
+    <lista-trayecto [trayectos]="listaTrayectos"></lista-trayecto>
+  </div>
+</section>
+
+
+
+
+<!-- MENSAJE MODAL NO HAY TRAYETOS -->
+<div class="modal fade" id="trayectoModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+
+      <div class="modal-body">
+        <button type="button" class="close col-1" data-dismiss="modal">
+          <span>&times;</span>
+        </button>
+        <div class="texto-modal">
+          <p>NO HAY NINGUN TRAYECTO CERCANO</p>
+
+          <button class="botonmodal btn btn-warning col-5" [routerLink]="['/publicar']" (click)="cerrarModal()">Publicalo tu mismo</button>
+          <button class="botonmodal btn btn-success col-5" [routerLink]="['/buscar']" (click)="cerrarModal()">Buscar de Nuevo</button>
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+</div>

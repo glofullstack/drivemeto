@@ -1,0 +1,62 @@
+
+header{
+    height: 40px;   
+    margin-bottom: 2em;
+}
+
+header nav ul li{
+    margin: 0 auto;
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.7);
+   
+}
+
+header nav ul li a{
+    font-family: 'Raleway', sans-serif;
+	display: block;
+	padding: 10px 20px 0px 20px;
+    /* text-align: center; */
+    color: rgba(17, 47, 65);    
+    height: 40px;
+    text-transform:uppercase;
+    font-weight: bold;
+}
+
+header nav ul li a:active   {
+    color: rgb(6, 101, 129);
+
+}
+.desplegable ul{
+ display: none;
+}
+
+
+.desplegable:hover ul{
+    display: block;
+}
+
+header nav ul li a:hover{
+    height: 45px;
+    transition: 0.5s;
+    font-weight: 400;   
+}
+
+
+header .logo, header nav{
+	float: left;
+}
+
+.modal-body button{
+    margin-top:0.5em;
+}
+
+.rigth{
+    -webkit-border-bottom-right-radius: 10px;
+    -moz-border-radius-bottomright:  10px; 
+    border-bottom-right-radius:  10px;
+}
+.left{
+    -webkit-border-bottom-left-radius:  10px;
+    -moz-border-radius-bottomleft:  10px;
+    border-bottom-left-radius:  10px;
+}

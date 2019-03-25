@@ -1,0 +1,24 @@
+
+
+  <div class="login">
+  <h2>Inicia Sesión</h2>
+  
+      <form novalidate
+      #formuLogin="ngForm"
+      (ngSubmit)="manejarLogin(formuLogin)" >
+
+          <div class="input-group mb-3 ">
+            <input type="mail" class="form-control" name="mail" placeholder="Tu e-mail" ngModel>
+          </div> 
+
+          <div class="input-group mb-3">
+              <input type="password" class="form-control" name="pwd" placeholder="Contraseña" ngModel>
+          </div>
+          <div class="text-danger mb-2">
+            <small *ngIf="error">**Mail o contraseña incorrectos</small>
+          </div>
+          <button type="submit" class="btn btn-success" [routerLink]="['/perfil']">Login</button>
+        </form>
+ 
+  </div>
+ 

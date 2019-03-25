@@ -1,0 +1,64 @@
+.fondoperfil {
+  background-color: #fff;
+  border-radius: 10px;
+  margin-top: 3em!important;
+  color: #F2F2F2;
+  font-weight: bolder;
+  box-shadow: -6px 4px 10px rgba(0,0,0,0.6);
+}
+
+/* +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+.mistrayectos{
+    font-weight: 300;
+    padding-top:20px;
+    border-top: 1px solid white;
+}
+
+.mistrayectos p{
+    text-transform: uppercase;
+}
+
+.fondoperfil header{
+    padding: 20px;
+    text-align: center;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+  }
+
+.foto {
+   width: 150px;
+   height: 150px;
+   background-color:rgba(17, 47, 65);
+   border-radius: 50%;
+   margin: 0 auto;
+   background-position: center;
+   background-size: cover;
+
+}
+
+.fondoperfil header .foto img {
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+}
+/* ++++++++++++++++++++++++++++FORMU+++++++++++++++++++++++++++++++++++++++++ */
+
+.formularioperfil{
+  padding: 20px 0 0 3em;
+  color: green;
+  /* text-align: center; */
+}
+.perfil .form-control{
+  /* text-align: center; */
+  border-radius: 0;
+  border: 0;
+  border-bottom: 1px solid rgb(56, 80, 53);
+}
+.perfil .form-group{
+  /* text-align: center; */
+}
+
+/* quitar label del file */
+.custom-file-label::after{
+  display: none;
+}

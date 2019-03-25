@@ -1,0 +1,13 @@
+.mislista p{
+    display: block;
+    background-color:rgb(56, 80, 53);
+    padding: 3px 1px 1px 0;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.mistrayectos p:hover{
+    background-color: #B6FFAE;
+    color: black;
+    transition: 1s;
+}

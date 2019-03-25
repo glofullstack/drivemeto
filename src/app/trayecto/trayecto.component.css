@@ -1,0 +1,124 @@
+.mapa {
+  position: absolute;
+  width: 375px;
+  height: 265px;
+  border-radius: 5px;
+  margin:0 auto;
+  top:47px;
+  left:57px;
+  -webkit-box-shadow: inset 2px 2px 7px 1px #000000; 
+ box-shadow: inset 2px 2px 7px 1px #000000;
+}
+
+
+.contentmapa{
+  width: 459px;
+  height: 358px;
+  background-image: url('../../assets/images/gps.png');
+  /* background-attachment: fixed; */
+  background-size: contain;
+  background-position: center;
+  border-radius: 27px;
+  -webkit-box-shadow: 5px 5px 3px -1px #000000; 
+box-shadow: 5px 5px 3px -1px #000000;
+  
+}
+
+
+/* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++  nuevo */
+.infotrayecto{
+  width: 600px;
+  background-color: rgba(17, 47, 65, 0.8);
+  color: aliceblue;
+  margin: 0 auto;
+  padding:10px;
+  /* padding: 20px 20px 5px 20px; */
+}
+.lista{
+  margin: 0 auto;
+  border: 3px solid white;
+  padding:1em 0.5em;
+}
+.detalles{
+  margin: 0 auto;
+}
+
+.icin{
+  /* border:2px black solid; */
+  margin-top:20px;
+}
+.icono{
+  float: left;
+ margin-top:-10px;
+ margin-right: 10px;
+ margin-left: 20px;
+  font-size: 3em;
+}
+.info{
+  float: left;
+ line-height: 0.2em;
+}
+.info::after{
+  clear: both;
+}
+.clear{
+  clear: both;
+}
+.fa-map-marker{
+  color:#F2B134;
+}
+.fa-map-marker-alt{
+  color:#47AB6C;
+}
+.fa-calendar-alt{
+  color:#ED553B;
+}
+.fa-car{
+  color:#0894A1;
+}
+.fa-id-badge{
+  color:#9E033D;
+}
+
+/* usuarios apuntados */
+.apuntados{
+  margin: 0 auto;
+  text-align: center;
+}
+
+.apuntados  p{
+  text-align: center;
+  margin: 0em auto;
+  background-color: #fff;
+  color: rgba(17, 47, 65);
+  padding: 4px 0 1px 0;
+  font-weight: 500;
+  width: 90%;
+  display: block;
+}
+
+.usuariosclass{
+  margin: 1em auto;
+}
+.usuariobola{
+  /* width: 120px;
+  height: 120px;
+  background-color: #47AB6C;
+  border: white solid 4px; */
+  /* border-radius: 50%; */
+  float: left;
+  margin-right: 14px;
+}
+
+.botonestrayecto {
+  cursor: pointer;
+}
+
+.creador{
+  background-color: purple;
+  border-radius:50%;
+  margin:0px;
+  margin-top: -10px;
+  margin-left:15px;
+  margin-right: 10px;
+}

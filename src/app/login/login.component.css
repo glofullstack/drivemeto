@@ -1,0 +1,17 @@
+
+
+.login{
+    /* background-image: url('../../assets/images/fondo_sesion.jpg'); */
+    background: rgb(168,255,120);
+    background: linear-gradient(90deg, rgba(168,255,120,1) 0%, rgba(120,255,214,1) 100%);
+    padding: 2em;
+    color:#112F41 !important; 
+    
+   
+}
+
+.login h2{
+    /* font-weight: bold !important; */
+    text-transform: uppercase;
+}
+
