@@ -54,6 +54,7 @@ export class UsuarioService {
   perfilUser(){
     return this.httpClient.post<any>(`${this.urlUsuario}/perfil`, {
       'token': JSON.parse(localStorage.getItem('token'))
+     
     })
   }
 

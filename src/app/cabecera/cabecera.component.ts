@@ -11,6 +11,7 @@ declare var $
 export class CabeceraComponent implements OnInit {
 
   userName: string
+  
   constructor(public serviceUsuario: UsuarioService) { }
 
   ngOnInit() {
